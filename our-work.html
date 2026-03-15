@@ -1510,6 +1510,76 @@
       toggleOverlay(false);
     });
   }
+
+  // ═══════════════════════════════════════════════════════════════
+  // MOBILE/TOUCH SUPPORT - Completely separate from desktop handlers
+  // ═══════════════════════════════════════════════════════════════
+  const IS_TOUCH_DEVICE = () => {
+    return (
+      ('ontouchstart' in window) ||
+      (navigator.maxTouchPoints > 0) ||
+      (navigator.msMaxTouchPoints > 0)
+    );
+  };
+
+  const MobileInteractions = {
+    init() {
+      // Only run on touch devices
+      if (!IS_TOUCH_DEVICE()) return;
+
+      // Get all poster cards
+      const posterCards = document.querySelectorAll('.poster-card');
+      
+      posterCards.forEach(card => {
+        // Track which posters are open on mobile (only one at a time)
+        let isOpen = false;
+
+        card.addEventListener('click', (e) => {
+          // Prevent triggering play buttons when opening/closing overlay
+          if (e.target.closest('.reel-play-btn')) {
+            return; // Let the play button handler deal with it
+          }
+
+          e.preventDefault();
+          isOpen = !isOpen;
+
+          const overlay = card.querySelector('.poster-overlay');
+          
+          if (isOpen) {
+            // Open overlay
+            card.classList.add('active');
+            overlay.setAttribute('aria-hidden', 'false');
+            overlay.style.animation = 'posterFade 0.36s ease forwards';
+          } else {
+            // Close overlay
+            card.classList.remove('active');
+            overlay.setAttribute('aria-hidden', 'true');
+            overlay.style.animation = 'posterFade 0.36s ease reverse';
+          }
+        });
+
+        // Close overlay when clicking outside any poster (if needed)
+        // Optional: uncommenting this would close an open poster when clicking elsewhere
+        // document.addEventListener('click', (e) => {
+        //   if (!card.contains(e.target) && isOpen) {
+        //     isOpen = false;
+        //     card.classList.remove('active');
+        //     overlay.setAttribute('aria-hidden', 'true');
+        //     // ... animation logic
+        //   }
+        // });
+      });
+    }
+  };
+
+  // Initialize mobile interactions when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      MobileInteractions.init();
+    });
+  } else {
+    MobileInteractions.init();
+  }
 </script>
 
 <script>
