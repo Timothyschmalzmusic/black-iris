@@ -549,8 +549,10 @@
 
   @media (max-width: 540px) {
     .poster-grid {
-      grid-template-columns: 1fr;
-      max-width: 360px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      transform: scale(1);
+      max-width: 100%;
       margin: 0 auto;
     }
     .nav-links { gap: 1.4rem; }
