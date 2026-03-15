@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Iris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G5BG9TQ9QZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G5BG9TQ9QZ');
+</script>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #111111;
+    --gray: #6b6b6b;
+    --light-gray: #b0b0b0;
+    --white: #ffffff;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar styling - minimal bar without track lines */
+  html::-webkit-scrollbar {
+    width: 8px;
+  }
+  html::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  html::-webkit-scrollbar-thumb {
+    background: var(--light-gray);
+    border-radius: 4px;
+  }
+  html::-webkit-scrollbar-thumb:hover {
+    background: var(--gray);
+  }
+
+  /* Firefox scrollbar */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--light-gray) transparent;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Iris watermark */
+  .iris-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    height: 520px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    animation: watermarkIn 3s ease 1.8s forwards;
+  }
+  @keyframes watermarkIn { to { opacity: 0.065; } }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .title {
+    font-family: 'Inter', sans-serif;
+    font-size: 4.2rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards;
+  }
+  .title span { display: block; }
+
+  .subtitle {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray);
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.3s forwards;
+  }
+
+  .rule {
+    width: 48px;
+    height: 1px;
+    background-color: var(--black);
+    margin: 2.5rem auto;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.5s forwards;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--gray);
+    max-width: 400px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.7s forwards;
+  }
+
+  .links {
+    margin-top: 2.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.9s forwards;
+  }
+
+  .links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  .links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--black);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  .links a:hover { color: var(--black); }
+  .links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .footer-line {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    color: var(--light-gray);
+    opacity: 0;
+    animation: fadeUp 1.2s ease 1.2s forwards;
+    white-space: nowrap;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 540px) {
+    .title { font-size: 1.9rem; }
+    .links { gap: 1.6rem; }
+    .iris-watermark { width: 340px; height: 340px; }
+  }
+</style>
+</head>
+<body>
+
+<svg class="iris-watermark" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer petal fills -->
+  <g fill="#111" fill-opacity="0.22" stroke="none">
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(0 200 200)"/>
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(60 200 200)"/>
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(120 200 200)"/>
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(180 200 200)"/>
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(240 200 200)"/>
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(300 200 200)"/>
+  </g>
+  <!-- Inner petal fills -->
+  <g fill="#111" fill-opacity="0.3" stroke="none">
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(30 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(90 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(150 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(210 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(270 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(330 200 200)"/>
+  </g>
+  <!-- Center fill -->
+  <circle cx="200" cy="200" r="18" fill="#111" fill-opacity="0.35" stroke="none"/>
+  <!-- All line detail -->
+  <g fill="none" stroke="#111" stroke-width="0.8">
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(0 200 200)"/>
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(60 200 200)"/>
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(120 200 200)"/>
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(180 200 200)"/>
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(240 200 200)"/>
+    <ellipse cx="200" cy="120" rx="38" ry="95" transform="rotate(300 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(30 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(90 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(150 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(210 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(270 200 200)"/>
+    <ellipse cx="200" cy="155" rx="22" ry="55" transform="rotate(330 200 200)"/>
+    <circle cx="200" cy="200" r="18"/>
+    <circle cx="200" cy="200" r="8"/>
+  </g>
+</svg>
+
+<div class="content">
+  <h1 class="title">
+    <span>Black Iris</span>
+  </h1>
+  <p class="subtitle">Original Music for Film &amp; Television</p>
+  <div class="rule"></div>
+  <p class="description">Crafting evocative, cinematic scores that serve the story.</p>
+  <nav class="links">
+    <a href="our-work.html">Our Work</a>
+    <a href="about.html">About</a>
+  </nav>
+</div>
+
+<div class="footer-line">&copy; 2026 Black Iris</div>
+
+<script>
+  // Notify visitor
+  (function() {
+    const page = document.title || 'Home';
+    fetch('/.netlify/functions/notify-visitor', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ page })
+    }).catch(err => console.log('Notification sent'));
+  })();
+</script>
+
+</body>
+</html>
