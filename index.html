@@ -142,7 +142,7 @@
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
   }
-  .landing-title span { display: block; }
+  .landing-title span { display: inline; }
 
   .landing-subtitle {
     margin-top: 1rem;
@@ -1429,17 +1429,22 @@
     // Fade landing content as user scrolls down
     if (landingHero) {
       const heroH = landingHero.offsetHeight;
-      const fadeStart = heroH * 0.1;
-      const fadeEnd = heroH * 0.5;
-      const progress = Math.min(Math.max((window.scrollY - fadeStart) / (fadeEnd - fadeStart), 0), 1);
-      const opacity = 1 - progress;
+      // Phase 1: color to purple (0-20% scroll)
+      const colorStart = 0;
+      const colorEnd = heroH * 0.2;
+      const colorProgress = Math.min(Math.max(window.scrollY / colorEnd, 0), 1);
+      // Phase 2: fade out (30-55% scroll)
+      const fadeStart = heroH * 0.3;
+      const fadeEnd = heroH * 0.55;
+      const fadeProgress = Math.min(Math.max((window.scrollY - fadeStart) / (fadeEnd - fadeStart), 0), 1);
+      const opacity = 1 - fadeProgress;
       if (landingContent) landingContent.style.opacity = opacity;
-      // Fade title color to purple as it disappears
+      // Fade title color to purple
       const titleIris = document.querySelector('.title-iris');
       if (titleIris) {
-        const r = Math.round(17 + progress * (107 - 17));
-        const g = Math.round(17 + progress * (63 - 17));
-        const b = Math.round(17 + progress * (160 - 17));
+        const r = Math.round(17 + colorProgress * (107 - 17));
+        const g = Math.round(17 + colorProgress * (63 - 17));
+        const b = Math.round(17 + colorProgress * (160 - 17));
         titleIris.style.color = `rgb(${r},${g},${b})`;
         titleIris.parentElement.style.color = `rgb(${r},${g},${b})`;
       }
