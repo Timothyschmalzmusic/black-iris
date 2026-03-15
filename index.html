@@ -25,6 +25,7 @@
     --faint: #e8e8e8;
     --white: #ffffff;
     --off-white: #fafafa;
+    --iris-purple: #6B3FA0;
   }
 
   html {
@@ -80,6 +81,7 @@
     transition: opacity 0.3s ease;
   }
   .nav-logo:hover { opacity: 0.6; }
+  .nav-iris { color: var(--iris-purple); }
 
   .nav-links {
     display: flex;
@@ -790,7 +792,7 @@
 
 <!-- Navigation -->
 <nav class="site-nav" id="siteNav">
-  <a href="#top" class="nav-logo">Black Iris</a>
+  <a href="#top" class="nav-logo">Black <span class="nav-iris">Iris</span></a>
   <ul class="nav-links">
     <li><a href="#work">Our Work</a></li>
     <li><a href="#about">About</a></li>
@@ -805,7 +807,7 @@
 
   <div class="landing-content">
     <h1 class="landing-title">
-      <span>Black Iris</span>
+      <span>Black <span class="title-iris">Iris</span></span>
     </h1>
     <p class="landing-subtitle">Original Music for Film &amp; Television</p>
   </div>
@@ -1408,7 +1410,7 @@
 
 <!-- Footer -->
 <footer class="site-footer">
-  <a href="#top" class="footer-logo">Black Iris</a>
+  <a href="#top" class="footer-logo">Black <span style="color:var(--iris-purple)">Iris</span></a>
   <p class="footer-copy">&copy; 2026 Black Iris</p>
 </footer>
 
@@ -1432,6 +1434,15 @@
       const progress = Math.min(Math.max((window.scrollY - fadeStart) / (fadeEnd - fadeStart), 0), 1);
       const opacity = 1 - progress;
       if (landingContent) landingContent.style.opacity = opacity;
+      // Fade title color to purple as it disappears
+      const titleIris = document.querySelector('.title-iris');
+      if (titleIris) {
+        const r = Math.round(17 + progress * (107 - 17));
+        const g = Math.round(17 + progress * (63 - 17));
+        const b = Math.round(17 + progress * (160 - 17));
+        titleIris.style.color = `rgb(${r},${g},${b})`;
+        titleIris.parentElement.style.color = `rgb(${r},${g},${b})`;
+      }
       if (irisWatermark) irisWatermark.style.opacity = 0.065 * opacity;
     }
 
