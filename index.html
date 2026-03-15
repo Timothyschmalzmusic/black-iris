@@ -1469,8 +1469,8 @@
     // Fade landing content as user scrolls down
     if (landingHero) {
       const heroH = landingHero.offsetHeight;
-      const fadeStart = heroH * 0.05;
-      const fadeEnd = heroH * 0.35;
+      const fadeStart = heroH * 0.1;
+      const fadeEnd = heroH * 0.5;
       const progress = Math.min(Math.max((window.scrollY - fadeStart) / (fadeEnd - fadeStart), 0), 1);
       const opacity = 1 - progress;
       if (landingContent) landingContent.style.opacity = opacity;
