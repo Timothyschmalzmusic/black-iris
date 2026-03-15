@@ -548,12 +548,30 @@
   }
 
   @media (max-width: 540px) {
+    .poster-grid-wrapper {
+      max-height: none;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+    }
+    .poster-grid-wrapper:hover {
+      overflow-y: visible;
+    }
+    .poster-grid-wrapper::after {
+      display: none;
+    }
     .poster-grid {
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-direction: row;
       gap: 0.75rem;
-      transform: scale(1);
-      max-width: 100%;
-      margin: 0 auto;
+      transform: none;
+      padding: 0 0.5rem 0.5rem;
+    }
+    .poster-card {
+      flex: 0 0 45vw;
+      aspect-ratio: 2 / 3;
+      scroll-snap-align: center;
     }
     .nav-links { gap: 1.4rem; }
     .nav-links a { font-size: 0.58rem; letter-spacing: 0.2em; }
