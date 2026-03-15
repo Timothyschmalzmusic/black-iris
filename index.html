@@ -1376,15 +1376,17 @@
         <h2 class="contact-heading">Get in Touch</h2>
         <p class="contact-subtext">For scoring inquiries, collaborations, or general questions.</p>
 
-        <div class="contact-form">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hidden" style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
           <div class="form-row-split">
             <div class="form-row">
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" autocomplete="name">
+              <input type="text" id="name" name="name" autocomplete="name" required>
             </div>
             <div class="form-row">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email">
+              <input type="email" id="email" name="email" autocomplete="email" required>
             </div>
           </div>
           <div class="form-row">
@@ -1393,14 +1395,14 @@
           </div>
           <div class="form-row">
             <label for="message">Message</label>
-            <textarea id="message" name="message"></textarea>
+            <textarea id="message" name="message" required></textarea>
           </div>
-          <button type="button" class="form-submit">Send Message</button>
-        </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
 
         <div class="contact-email">
           <p class="contact-email-label">Or reach out directly</p>
-          <a href="/cdn-cgi/l/email-protection#b9d0d7dfd6f9dbd5d8dad2d0cbd0cad4cccad0da97dad6d4"><span class="__cf_email__" data-cfemail="a3cacdc5cce3c1cfc2c0c8cad1cad0ced6d0cac08dc0ccce">[email&#160;protected]</span></a>
+          <a href="mailto:info@blackirismusic.com">info@blackirismusic.com</a>
         </div>
 
       </div>
