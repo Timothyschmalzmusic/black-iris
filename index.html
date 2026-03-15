@@ -19,9 +19,7 @@
 
   :root {
     --black: #111111;
-    --dark: #1a1a1a;
     --gray: #6b6b6b;
-    --mid-gray: #999;
     --light-gray: #b0b0b0;
     --rule: #d4d4d4;
     --faint: #e8e8e8;
@@ -73,7 +71,6 @@
   }
 
   .nav-logo {
-    font-family: 'Inter', sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: 0.06em;
@@ -89,7 +86,6 @@
     list-style: none;
   }
   .nav-links a {
-    font-family: 'Inter', sans-serif;
     font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.18em;
@@ -135,7 +131,6 @@
   }
 
   .landing-title {
-    font-family: 'Inter', sans-serif;
     font-size: 4.2rem;
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -224,7 +219,6 @@
     text-align: center;
   }
   .section-hero h2 {
-    font-family: 'Inter', sans-serif;
     font-size: 2.4rem;
     font-weight: 300;
     letter-spacing: 0.14em;
@@ -254,7 +248,6 @@
     padding: 2rem 2rem 3rem;
   }
   .section-label {
-    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -312,8 +305,6 @@
     scroll-snap-align: start;
   }
 
-  .poster-card[data-poster] { cursor: pointer; }
-
   .poster-card[data-poster] .poster-overlay {
     position: absolute;
     top: 50%;
@@ -342,14 +333,12 @@
   }
 
   .poster-overlay h2 {
-    font-family: 'Inter', sans-serif;
     font-size: 1.6rem;
     margin-bottom: 0.35rem;
     letter-spacing: 0.08em;
   }
 
   .poster-credit {
-    font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
     color: rgba(0,0,0,0.7);
     margin-bottom: 1.35rem;
@@ -397,73 +386,7 @@
   }
   .poster-card.active .poster-bg img { opacity: 0; }
 
-  .poster-content {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 2rem 1.5rem;
-    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.6) 100%);
-    transition: background 0.5s ease;
-  }
-  .poster-card:hover .poster-content {
-    background: linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.7) 100%);
-  }
 
-  .poster-type {
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    transition: color 0.4s ease;
-  }
-  .poster-card:hover .poster-type { color: rgba(255,255,255,0.6); }
-
-  .poster-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.9);
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-  }
-
-  .poster-year {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.35);
-    margin-bottom: 0.8rem;
-  }
-
-  .poster-desc {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    font-style: italic;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.55);
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.4s ease;
-  }
-  .poster-card:hover .poster-desc { max-height: 80px; opacity: 1; }
-
-  .poster-rule {
-    width: 28px;
-    height: 1px;
-    background: rgba(255,255,255,0.25);
-    margin-bottom: 0.8rem;
-    transition: width 0.5s ease;
-  }
-  .poster-card:hover .poster-rule { width: 48px; }
 
   /* ══════════ AUDIO REEL ══════════ */
   .reel-section {
@@ -548,7 +471,6 @@
   .reel-info { flex: 1; min-width: 0; }
 
   .reel-title {
-    font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
     font-weight: 400;
     letter-spacing: 0.04em;
@@ -596,7 +518,6 @@
   }
 
   .prose {
-    font-family: 'Inter', sans-serif;
     font-size: 0.92rem;
     line-height: 1.9;
     color: var(--gray);
@@ -632,7 +553,6 @@
   .bio-text { flex: 1; min-width: 0; }
 
   .bio-name {
-    font-family: 'Inter', sans-serif;
     font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: 0.08em;
@@ -661,7 +581,6 @@
   }
 
   .contact-heading {
-    font-family: 'Inter', sans-serif;
     font-size: 1.6rem;
     font-weight: 300;
     letter-spacing: 0.12em;
@@ -717,7 +636,6 @@
 
   .form-submit {
     display: inline-block;
-    font-family: 'Inter', sans-serif;
     font-size: 0.62rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -782,7 +700,6 @@
     border-top: 1px solid var(--faint);
   }
   .footer-logo {
-    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0.06em;
@@ -811,8 +728,6 @@
     .section-hero { padding: 5rem 1.5rem 3rem; }
     .section-hero h2 { font-size: 1.8rem; }
     .section { padding: 3rem 1.5rem; }
-    .poster-title { font-size: 1.4rem; }
-    .poster-desc { font-size: 0.7rem; }
     .bio-layout {
       flex-direction: column;
       align-items: center;
@@ -867,10 +782,7 @@
     .nav-links a { font-size: 0.58rem; letter-spacing: 0.2em; }
   }
 
-  @media (max-width: 480px) {
-    .nav-links { gap: 1.4rem; }
-    .nav-links a { font-size: 0.58rem; letter-spacing: 0.2em; }
-  }
+
 </style>
 </head>
 <body>
