@@ -6,7 +6,7 @@
 <title>Black Iris</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5BG9TQ9QZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -71,9 +71,10 @@
   }
 
   .nav-logo {
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
     color: var(--black);
     text-decoration: none;
     transition: opacity 0.3s ease;
@@ -131,10 +132,11 @@
   }
 
   .landing-title {
-    font-size: 4.2rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    line-height: 1.2;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    line-height: 1.05;
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
   }
@@ -698,9 +700,10 @@
     border-top: 1px solid var(--faint);
   }
   .footer-logo {
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 0.06em;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
     color: var(--black);
     text-decoration: none;
   }
@@ -738,7 +741,7 @@
   }
 
   @media (max-width: 540px) {
-    .landing-title { font-size: 1.9rem; }
+    .landing-title { font-size: 2.8rem; }
     .landing-links { gap: 1.6rem; }
     .iris-watermark { width: 340px; height: 340px; }
     .poster-grid {
@@ -1191,7 +1194,7 @@
                   <div class="reel-subtitle">Original Score</div>
                   <div class="reel-progress"><div class="reel-progress-bar"></div></div>
                 </div>
-                <span class="reel-duration">3:00</span>
+                <span class="reel-duration">1:38</span>
               </div>
             </div>
           </div>
@@ -1456,9 +1459,23 @@
   const nav = document.getElementById('siteNav');
   const navLinks = document.querySelectorAll('.nav-links a');
   const sections = { work: document.getElementById('work'), about: document.getElementById('about'), contact: document.getElementById('contact') };
+  const landingHero = document.querySelector('.landing-hero');
+  const landingContent = document.querySelector('.landing-content');
+  const irisWatermark = document.querySelector('.iris-watermark');
 
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
+
+    // Fade landing content as user scrolls down
+    if (landingHero) {
+      const heroH = landingHero.offsetHeight;
+      const fadeStart = heroH * 0.15;
+      const fadeEnd = heroH * 0.6;
+      const progress = Math.min(Math.max((window.scrollY - fadeStart) / (fadeEnd - fadeStart), 0), 1);
+      const opacity = 1 - progress;
+      if (landingContent) landingContent.style.opacity = opacity;
+      if (irisWatermark) irisWatermark.style.opacity = 0.065 * opacity;
+    }
 
     // Highlight active nav link based on scroll position
     const scrollY = window.scrollY + 200;
