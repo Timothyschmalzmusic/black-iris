@@ -1307,6 +1307,54 @@
     });
   }
 
+  // Poster overlay interaction (tron)
+  const tronCard = document.querySelector('.poster-card[data-poster="tron"]');
+  if (tronCard) {
+    const overlay = tronCard.querySelector('.poster-overlay');
+
+    const toggleOverlay = (show) => {
+      tronCard.classList.toggle('active', show);
+      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
+      if (show) {
+        overlay.style.animation = 'posterFade 0.36s ease forwards';
+      } else {
+        overlay.style.animation = 'posterFade 0.36s ease reverse';
+      }
+    };
+
+    tronCard.addEventListener('mouseenter', () => {
+      toggleOverlay(true);
+    });
+
+    tronCard.addEventListener('mouseleave', () => {
+      toggleOverlay(false);
+    });
+  }
+
+  // Poster overlay interaction (starwars)
+  const starwarsCard = document.querySelector('.poster-card[data-poster="starwars"]');
+  if (starwarsCard) {
+    const overlay = starwarsCard.querySelector('.poster-overlay');
+
+    const toggleOverlay = (show) => {
+      starwarsCard.classList.toggle('active', show);
+      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
+      if (show) {
+        overlay.style.animation = 'posterFade 0.36s ease forwards';
+      } else {
+        overlay.style.animation = 'posterFade 0.36s ease reverse';
+      }
+    };
+
+    starwarsCard.addEventListener('mouseenter', () => {
+      toggleOverlay(true);
+    });
+
+    starwarsCard.addEventListener('mouseleave', () => {
+      toggleOverlay(false);
+    });
+  }
+
   // Poster overlay interaction (it)
   const itCard = document.querySelector('.poster-card[data-poster="it"]');
   if (itCard) {
