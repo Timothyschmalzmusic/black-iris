@@ -800,6 +800,27 @@
         </div>
       </div>
 
+      <div class="poster-card" data-poster="goldrun">
+        <div class="poster-bg"><img src="assets/posters/06_The Gold Run.jpg" alt="The Gold Run"></div>
+        <div class="poster-overlay" aria-hidden="true">
+          <h2>The Gold Run</h2>
+          <p class="poster-credit">Timothy Schmalz, additional music</p>
+          <div class="poster-audio">
+            <div class="reel-item" data-track="goldrun">
+              <button class="reel-play-btn" aria-label="Play">
+                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+              </button>
+              <div class="reel-info">
+                <div class="reel-title">The Gold Run — Transport Frøya</div>
+                <div class="reel-subtitle">Original Score</div>
+                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
+              </div>
+              <span class="reel-duration">2:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="poster-card" data-poster="otto">
         <div class="poster-bg"><img src="assets/posters/06_A Man Called Otto.jpg" alt="A Man Called Otto"></div>
         <div class="poster-overlay" aria-hidden="true">
@@ -1137,6 +1158,7 @@
     it2: 'assets/audio/Welcome to Derry IT -- Teddy, Phil and Lily.wav',
     supergirl: 'assets/audio/Supergirl -- Alien.wav',
     supergirl2: 'assets/audio/Supergirl -- Lenas Nightmare.wav',
+    goldrun: 'assets/audio/Gold Transport Frøya.wav',
     otto: 'assets/audio/A Man Called Otto -- La Mer Azure.m4a',
     pole1: 'assets/audio/Pole to Pole with Will Smith -- Anaconda.m4a',
     pole2: 'assets/audio/Pole to Pole with Will Smith -- Beautiful but Terrifying.m4a',
@@ -1351,6 +1373,30 @@
     });
 
     starwarsCard.addEventListener('mouseleave', () => {
+      toggleOverlay(false);
+    });
+  }
+
+  // Poster overlay interaction (goldrun)
+  const goldrunCard = document.querySelector('.poster-card[data-poster="goldrun"]');
+  if (goldrunCard) {
+    const overlay = goldrunCard.querySelector('.poster-overlay');
+
+    const toggleOverlay = (show) => {
+      goldrunCard.classList.toggle('active', show);
+      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
+      if (show) {
+        overlay.style.animation = 'posterFade 0.36s ease forwards';
+      } else {
+        overlay.style.animation = 'posterFade 0.36s ease reverse';
+      }
+    };
+
+    goldrunCard.addEventListener('mouseenter', () => {
+      toggleOverlay(true);
+    });
+
+    goldrunCard.addEventListener('mouseleave', () => {
       toggleOverlay(false);
     });
   }
