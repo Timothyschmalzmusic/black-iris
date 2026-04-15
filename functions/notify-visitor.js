@@ -24,7 +24,7 @@ exports.handler = async (event) => {
           type: 'header',
           text: {
             type: 'plain_text',
-            text: '🌐 Black Iris Website Visit'
+            text: '🌐 Solstice Website Visit'
           }
         },
         {

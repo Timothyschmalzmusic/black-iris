@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Black Iris</title>
+<title>Solstice</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@200;300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5BG9TQ9QZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -25,7 +25,8 @@
     --faint: #e8e8e8;
     --white: #ffffff;
     --off-white: #fafafa;
-    --iris-purple: #6B3FA0;
+    --solstice-gold: #C8956C;
+    --solstice-light: #E8C9A0;
   }
 
   html {
@@ -72,16 +73,16 @@
   }
 
   .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     color: var(--black);
     text-decoration: none;
     transition: opacity 0.3s ease;
   }
   .nav-logo:hover { opacity: 0.6; }
-  .nav-iris { color: var(--iris-purple); }
 
   .nav-links {
     display: flex;
@@ -89,6 +90,7 @@
     list-style: none;
   }
   .nav-links a {
+    font-family: 'Jost', sans-serif;
     font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.18em;
@@ -109,9 +111,22 @@
     justify-content: center;
     padding: 3rem 2rem;
     position: relative;
+    overflow: hidden;
   }
 
-  .iris-watermark {
+  .particle-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    animation: particleFadeIn 3s ease 0.6s forwards;
+  }
+  @keyframes particleFadeIn { to { opacity: 1; } }
+
+  .solstice-watermark {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -123,7 +138,7 @@
     z-index: 0;
     animation: watermarkIn 3s ease 1.8s forwards;
   }
-  @keyframes watermarkIn { to { opacity: 0.065; } }
+  @keyframes watermarkIn { to { opacity: 0.08; } }
 
   .landing-content {
     position: relative;
@@ -134,21 +149,24 @@
   }
 
   .landing-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 5.5rem;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    line-height: 1.05;
+    font-family: 'Jost', sans-serif;
+    font-size: 5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    line-height: 1.1;
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
   }
   .landing-title span { display: inline; }
 
+  .title-solstice { color: var(--solstice-gold); }
+
   .landing-subtitle {
-    margin-top: 1rem;
-    font-size: 0.8rem;
+    margin-top: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 400;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.52em;
     text-transform: uppercase;
     color: var(--gray);
     opacity: 0;
@@ -223,6 +241,7 @@
     text-align: center;
   }
   .section-hero h2 {
+    font-family: 'Jost', sans-serif;
     font-size: 2.4rem;
     font-weight: 300;
     letter-spacing: 0.14em;
@@ -230,6 +249,7 @@
   }
   .section-hero .hero-sub {
     margin-top: 1rem;
+    font-family: 'Jost', sans-serif;
     font-size: 0.85rem;
     font-style: italic;
     color: var(--gray);
@@ -252,6 +272,7 @@
     padding: 2rem 2rem 3rem;
   }
   .section-label {
+    font-family: 'Jost', sans-serif;
     font-size: 0.9rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -337,12 +358,14 @@
   }
 
   .poster-overlay h2 {
+    font-family: 'Jost', sans-serif;
     font-size: 1.6rem;
     margin-bottom: 0.35rem;
     letter-spacing: 0.08em;
   }
 
   .poster-credit {
+    font-family: 'Jost', sans-serif;
     font-size: 0.8rem;
     color: rgba(0,0,0,0.7);
     margin-bottom: 1.35rem;
@@ -474,6 +497,7 @@
   .reel-info { flex: 1; min-width: 0; }
 
   .reel-title {
+    font-family: 'Jost', sans-serif;
     font-size: 0.95rem;
     font-weight: 400;
     letter-spacing: 0.04em;
@@ -521,6 +545,7 @@
   }
 
   .prose {
+    font-family: 'Jost', sans-serif;
     font-size: 0.92rem;
     line-height: 1.9;
     color: var(--gray);
@@ -556,6 +581,7 @@
   .bio-text { flex: 1; min-width: 0; }
 
   .bio-name {
+    font-family: 'Jost', sans-serif;
     font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: 0.08em;
@@ -584,6 +610,7 @@
   }
 
   .contact-heading {
+    font-family: 'Jost', sans-serif;
     font-size: 1.6rem;
     font-weight: 300;
     letter-spacing: 0.12em;
@@ -592,6 +619,7 @@
   }
 
   .contact-subtext {
+    font-family: 'Jost', sans-serif;
     font-size: 0.82rem;
     font-style: italic;
     color: var(--gray);
@@ -639,6 +667,7 @@
 
   .form-submit {
     display: inline-block;
+    font-family: 'Jost', sans-serif;
     font-size: 0.62rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -703,10 +732,11 @@
     border-top: 1px solid var(--faint);
   }
   .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     color: var(--black);
     text-decoration: none;
   }
@@ -746,7 +776,7 @@
   @media (max-width: 540px) {
     .landing-title { font-size: 2.8rem; }
     .landing-links { gap: 1.6rem; }
-    .iris-watermark { width: 340px; height: 340px; }
+    .solstice-watermark { width: 340px; height: 340px; }
     .poster-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 0.75rem;
@@ -793,7 +823,7 @@
 
 <!-- Navigation -->
 <nav class="site-nav" id="siteNav">
-  <a href="#top" class="nav-logo">Black <span class="nav-iris">Iris</span></a>
+  <a href="#top" class="nav-logo">Solstice</a>
   <ul class="nav-links">
     <li><a href="#work">Our Work</a></li>
     <li><a href="#about">About</a></li>
@@ -806,11 +836,38 @@
 <!-- ════════════════════════════════════════════════════════════ -->
 <section id="top" class="landing-hero">
 
+  <!-- Particle animation -->
+  <canvas class="particle-canvas" id="particleCanvas"></canvas>
+
+  <!-- Solstice radial watermark -->
+  <svg class="solstice-watermark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#C8956C" stop-opacity="0.5"/>
+        <stop offset="60%" stop-color="#E8C9A0" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#E8C9A0" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="100" cy="100" r="90" fill="url(#sunGrad)"/>
+    <g stroke="#C8956C" stroke-width="0.4" opacity="0.35">
+      <line x1="100" y1="5" x2="100" y2="195"/>
+      <line x1="5" y1="100" x2="195" y2="100"/>
+      <line x1="32.93" y1="32.93" x2="167.07" y2="167.07"/>
+      <line x1="167.07" y1="32.93" x2="32.93" y2="167.07"/>
+      <line x1="15.1" y1="65.4" x2="184.9" y2="134.6"/>
+      <line x1="15.1" y1="134.6" x2="184.9" y2="65.4"/>
+      <line x1="65.4" y1="15.1" x2="134.6" y2="184.9"/>
+      <line x1="134.6" y1="15.1" x2="65.4" y2="184.9"/>
+    </g>
+    <circle cx="100" cy="100" r="22" fill="none" stroke="#C8956C" stroke-width="0.5" opacity="0.3"/>
+    <circle cx="100" cy="100" r="55" fill="none" stroke="#C8956C" stroke-width="0.3" opacity="0.15"/>
+  </svg>
+
   <div class="landing-content">
     <h1 class="landing-title">
-      <span>Black <span class="title-iris">Iris</span></span>
+      <span class="title-solstice">Solstice</span>
     </h1>
-    <p class="landing-subtitle">Original Music for Film &amp; Television</p>
+    <p class="landing-subtitle">Music for Film, Games &amp; Television</p>
   </div>
 </section>
 
@@ -824,495 +881,19 @@
     <div class="hero-rule"></div>
   </section>
 
-  <!-- Poster Gallery -->
+  <!-- Poster Gallery (generated from data) -->
   <section class="section">
     <p class="section-label">Featured Projects</p>
     <div class="poster-grid-wrapper">
-      <div class="poster-grid">
-
-        <div class="poster-card" data-poster="sticky">
-          <div class="poster-bg"><img src="assets/posters/01_sticky.jpg" alt="Sticky"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Sticky</h2>
-            <p class="poster-credit">Timothy Schmalz, Composer</p>
-            <div class="poster-audio">
-              <div class="reel-item" data-track="sticky">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Sticky — The Burial</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:30</span>
-              </div>
-              <div class="reel-item" data-track="sticky2">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Sticky — The Heist</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">3:00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="cabin10">
-          <div class="poster-bg"><img src="assets/posters/02_The Woman In Cabin 10 2.jpg" alt="The Woman in Cabin 10"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>The Woman in Cabin 10</h2>
-            <p class="poster-credit">Flynn Hase Spence, additional music</p>
-            <div class="poster-audio">
-              <div class="reel-item" data-track="cabin1">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Women in Cabin 10 — The Yacht</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">3:00</span>
-              </div>
-              <div class="reel-item" data-track="cabin2">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Women in Cabin 10 — Man Overboard</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:15</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="sherwood">
-          <div class="poster-bg"><img src="assets/posters/03_Sherwood.jpg" alt="Sherwood"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Sherwood</h2>
-            <p class="poster-credit">Timothy Schmalz, composer</p>
-            <div class="poster-audio">
-              <div class="reel-item" data-track="sherwood">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Sherwood — Jerusalem</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:45</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="it">
-          <div class="poster-bg"><img src="assets/posters/04_It.jpeg" alt="It"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Welcome to Derry IT</h2>
-            <p class="poster-credit">Flynn Hase Spence, additional music</p>
-            <div class="poster-audio">
-              <div class="reel-item" data-track="it1">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Welcome to Derry IT — Mean Girls</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:50</span>
-              </div>
-              <div class="reel-item" data-track="it2">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Welcome to Derry IT — Teddy, Phil and Lily</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">3:15</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="supergirl">
-          <div class="poster-bg"><img src="assets/posters/05_Supergirl.jpg" alt="Supergirl"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Supergirl</h2>
-            <p class="poster-credit">Timothy Schmalz, composer</p>
-            <div class="poster-audio">
-              <div class="reel-item" data-track="supergirl">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Supergirl — Alien</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:40</span>
-              </div>
-              <div class="reel-item" data-track="supergirl2">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Supergirl — Lenas Nightmare</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:55</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="otto">
-          <div class="poster-bg"><img src="assets/posters/06_A Man Called Otto.jpg" alt="A Man Called Otto"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>A Man Called Otto</h2>
-            <p class="poster-credit">Timothy Schmalz, additional arranger</p>
-            <div class="poster-audio">
-              <div class="reel-item" data-track="otto">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">A Man Called Otto — La Mer Azure</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">3:05</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="pole">
-          <div class="poster-bg"><img src="assets/posters/07_Pole_to_Pole.jpg" alt="Pole to Pole"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Pole to Pole with Will Smith</h2>
-            <p class="poster-credit">Flynn Hase Spence, additional music</p>
-            <div class="poster-audio">
-              <div class="reel-item" data-track="pole1">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Pole to Pole with Will Smith — Anaconda</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:35</span>
-              </div>
-              <div class="reel-item" data-track="pole2">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Pole to Pole with Will Smith — Beautiful but Terrifying</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">3:10</span>
-              </div>
-              <div class="reel-item" data-track="pole3">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Pole to Pole with Will Smith — Hunt and Gather</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:45</span>
-              </div>
-              <div class="reel-item" data-track="pole4">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Pole to Pole with Will Smith — Secrets of Nature</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">3:00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="hostile">
-          <div class="poster-bg"><img src="assets/posters/08_Hostile Planet.jpg" alt="Hostile Planet"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Hostile Planet</h2>
-            <p class="poster-credit">Flynn Hase Spence, additional music</p>
-            <div class="poster-audio">
-              <div class="reel-item" data-track="hostile1">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Hostile Planet — Beluga</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">3:05</span>
-              </div>
-              <div class="reel-item" data-track="hostile2">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">Hostile Planet — Stranded</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:50</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="politician">
-          <div class="poster-bg"><img src="assets/posters/09_The_Politician.jpg" alt="The Politician"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>The Politician</h2>
-            <p class="poster-credit">Flynn Hase Spence, additional music</p>
-            <div class="poster-audio">
-              <div class="reel-item" data-track="politician1">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">The Politician — Investigator</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:55</span>
-              </div>
-              <div class="reel-item" data-track="politician2">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">The Politician — Manhattan Lullaby</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">3:20</span>
-              </div>
-              <div class="reel-item" data-track="politician3">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">The Politician — Scherzo Downtown</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">2:40</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="challenge">
-          <div class="poster-bg"><img src="assets/posters/10_The_Challenge.jpg" alt="The Challenge"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>The Challenge</h2>
-            <p class="poster-credit">Timothy Schmalz, composer</p>
-            <div class="poster-audio">
-              <div class="reel-item" data-track="challenge">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">The Challenge — Prepare for the Challenge</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">3:10</span>
-              </div>
-              <div class="reel-item" data-track="nonstop">
-                <button class="reel-play-btn" aria-label="Play">
-                  <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-                </button>
-                <div class="reel-info">
-                  <div class="reel-title">The Challenge — Nonstop</div>
-                  <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-                </div>
-                <span class="reel-duration">1:38</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="challengeaus">
-          <div class="poster-bg"><img src="assets/posters/11_The Challenge Australia.jpg" alt="The Challenge Australia"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>The Challenge Australia</h2>
-            <p class="poster-credit">Timothy Schmalz, additional composer</p>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="playmobil">
-          <div class="poster-bg"><img src="assets/posters/12_Playmobil.jpg" alt="Playmobil"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Playmobil: The Movie</h2>
-            <p class="poster-credit">Timothy Schmalz, additional music</p>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="coda">
-          <div class="poster-bg"><img src="assets/posters/13_Coda Trailer.jpg" alt="Coda Trailer"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>CODA</h2>
-            <p class="poster-credit">Flynn Hase Spence, trailer music</p>
-            <div class="poster-video">
-              <video width="100%" height="auto" controls style="max-width: 600px;">
-                <source src="assets/video/CODA Trailer.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="dune">
-          <div class="poster-bg"><img src="assets/posters/14_Dune Trailer.jpg" alt="Dune Trailer"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Dune</h2>
-            <p class="poster-credit">Flynn Hase Spence, trailer music</p>
-            <div class="poster-video">
-              <video width="100%" height="auto" controls style="max-width: 400px;">
-                <source src="assets/video/DUNE - Desert Visions Featurette Trailer.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="donlookup">
-          <div class="poster-bg"><img src="assets/posters/15_Don't Look Up New.jpeg" alt="Don't Look Up Trailer"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Don't Look Up</h2>
-            <p class="poster-credit">Flynn Hase Spence, trailer music</p>
-            <div class="poster-video">
-              <video width="100%" height="auto" controls style="max-width: 400px;">
-                <source src="assets/video/DON'T LOOK UP - DON'T LOOK UP TRAILER.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="elcamino">
-          <div class="poster-bg"><img src="assets/posters/16_El Camino Trailer.webp" alt="El Camino Trailer"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>El Camino</h2>
-            <p class="poster-credit">Flynn Hase Spence, trailer music</p>
-            <div class="poster-video">
-              <video width="100%" height="auto" controls style="max-width: 400px;">
-                <source src="assets/video/El Camino! A Breaking Bad Movie - El Camino! TRAILER.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="dreamhorse">
-          <div class="poster-bg"><img src="assets/posters/16_Dream Horse.jpg" alt="Dream Horse"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Dream Horse</h2>
-            <p class="poster-credit">Flynn Hase Spence, trailer music</p>
-            <div class="poster-video">
-              <video width="100%" height="auto" controls style="max-width: 400px;">
-                <source src="assets/video/Dream Horse TRAILER.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="kraven">
-          <div class="poster-bg"><img src="assets/posters/26_Kraven.jpg" alt="Kraven the Hunter"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>Kraven the Hunter</h2>
-            <p class="poster-credit">Flynn Hase Spence, additional music</p>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="tiljail">
-          <div class="poster-bg"><img src="assets/posters/27_Til Jail Do Us Part.jpg" alt="'Til Jail Do Us Part"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>'Til Jail Do Us Part</h2>
-            <p class="poster-credit">Timothy Schmalz &amp; Flynn Hase Spence, additional music</p>
-          </div>
-        </div>
-
-        <div class="poster-card" data-poster="velvet">
-          <div class="poster-bg"><img src="assets/posters/28_Velvet.jpg" alt="The Velvet"></div>
-          <div class="poster-overlay" aria-hidden="true">
-            <h2>The Velvet</h2>
-            <p class="poster-credit">Timothy Schmalz, additional music</p>
-          </div>
-        </div>
-
-        <div class="poster-card">
-          <div class="poster-bg"><img src="assets/posters/16_Mesa De Regalos.jpeg" alt="Mesa De Regalos"></div>
-        </div>
-
-        <div class="poster-card">
-          <div class="poster-bg"><img src="assets/posters/17_Life Below Zero 2.jpg" alt="Life Below Zero"></div>
-        </div>
-
-        <div class="poster-card">
-          <div class="poster-bg"><img src="assets/posters/18_Coachella 2.jpg" alt="Coachella"></div>
-        </div>
-
-        <div class="poster-card">
-          <div class="poster-bg"><img src="assets/posters/22_Deal or No Deal Island.jpg" alt="Deal or No Deal Island"></div>
-        </div>
-
-        <div class="poster-card">
-          <div class="poster-bg"><img src="assets/posters/23_Smallfoot.jpg" alt="Smallfoot"></div>
-        </div>
-
-        <div class="poster-card">
-          <div class="poster-bg"><img src="assets/posters/24_JFK Doc 2.jpg" alt="JFK Doc"></div>
-        </div>
-
-        <div class="poster-card">
-          <div class="poster-bg"><img src="assets/posters/25_Sonic.webp" alt="Sonic"></div>
-        </div>
-
-      </div>
+      <div class="poster-grid" id="posterGrid"></div>
     </div>
   </section>
 
-  <!-- Audio Reel -->
+  <!-- Audio Reel (generated from data) -->
   <section class="reel-section">
     <div class="section" style="padding-bottom: 3rem;">
       <p class="section-label">Selected Cues</p>
-      <div class="reel-list">
-
-        <div class="reel-item" data-track="astra">
-          <button class="reel-play-btn" aria-label="Play">
-            <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-          </button>
-          <div class="reel-info">
-            <div class="reel-title">Astra Pugnatia</div>
-            <div class="reel-subtitle">Timothy Schmalz</div>
-            <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-          </div>
-          <span class="reel-duration">2:18</span>
-        </div>
-
-        <div class="reel-item" data-track="joy">
-          <button class="reel-play-btn" aria-label="Play">
-            <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-          </button>
-          <div class="reel-info">
-            <div class="reel-title">Joy of Floating</div>
-            <div class="reel-subtitle">Timothy Schmalz</div>
-            <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-          </div>
-          <span class="reel-duration">3:42</span>
-        </div>
-
-      </div>
+      <div class="reel-list" id="reelList"></div>
     </div>
   </section>
 
@@ -1341,8 +922,8 @@
     <div class="section">
       <p class="section-label">The Studio</p>
       <div class="prose">
-        <p>Black Iris is a film scoring and music production studio specializing in original compositions for feature films, television, and documentary. Founded on the belief that music should serve the story above all else, the studio brings a composer-first approach to every project — prioritizing emotional authenticity, sonic craftsmanship, and close collaboration with filmmakers.</p>
-        <p>The studio was born out of years spent working alongside Hollywood's busiest composers providing additional music. That experience — learning the craft from the inside, delivering under the highest expectations, working inside Hollywood's top scoring stages, and developing the understanding of how music functions within a production pipeline — became the foundation for Black Iris. It's a studio built by composers who've done the work, now telling stories of their own.</p>
+        <p>Solstice is a film scoring and music production studio specializing in original music for film, games and television. Founded on the principle that music should serve the story, the studio brings a deep understanding of narrative and how to translate it into music.</p>
+        <p>Solstice was born out of our founder's years working alongside Hollywood's busiest composers providing additional music. That experience, paired with our distinct creative voices, became the foundation for the studio — built by composers who've shaped major projects, now telling stories of their own.</p>
       </div>
     </div>
   </section>
@@ -1362,7 +943,7 @@
           <p class="bio-role">Composer</p>
           <div class="prose">
             <p>Timothy Schmalz is a film composer and music producer based in Detroit. He recently composed the original score for Seanie Sugrue's forthcoming feature <em>Sticky</em>, starring John Keating, Johnny Whitworth, Drew Powell, and Amanda Jones. His work also extends to documentary and commercial projects, including films for Coachella/Goldenvoice and ad campaigns for Acura, Audi, Amazon, and other major brands. Drawing on a deep background in music theory, historical musicology, and contemporary production, he approaches each project as a unique sonic world — building bespoke palettes of acoustic and electronic elements tailored to the narrative at hand.</p>
-            <p>Timothy got his start over a decade spent in Los Angeles, writing additional music for Blake Neely, Heitor Pereira, Lorne Balfe, Junkie XL, and numerous others, contributing to projects including <em>Supergirl</em>, <em>Smallfoot</em>, <em>Playmobil: The Movie</em>, <em>Terminator: Dark Fate</em>, <em>Sonic the Hedgehog</em>, <em>The Challenge</em>, and <em>Sherwood</em>. That experience working alongside some of the industry's most accomplished composers became the foundation for his approach at Black Iris.</p>
+            <p>Timothy got his start over a decade spent in Los Angeles, writing additional music for Blake Neely, Heitor Pereira, Lorne Balfe, Junkie XL, and numerous others, contributing to projects including <em>Supergirl</em>, <em>Smallfoot</em>, <em>Playmobil: The Movie</em>, <em>Terminator: Dark Fate</em>, <em>Sonic the Hedgehog</em>, <em>The Challenge</em>, and <em>Sherwood</em>. That experience working alongside some of the industry's most accomplished composers became the foundation for his approach at Solstice.</p>
           </div>
         </div>
       </div>
@@ -1438,11 +1019,6 @@
           <button type="submit" class="form-submit">Send Message</button>
         </form>
 
-        <div class="contact-email">
-          <p class="contact-email-label">Or reach out directly</p>
-          <a href="mailto:info@blackirismusic.com">info@blackirismusic.com</a>
-        </div>
-
       </div>
     </div>
   </section>
@@ -1450,8 +1026,8 @@
 
 <!-- Footer -->
 <footer class="site-footer">
-  <a href="#top" class="footer-logo">Black <span style="color:var(--iris-purple)">Iris</span></a>
-  <p class="footer-copy">&copy; 2026 Black Iris</p>
+  <a href="#top" class="footer-logo">Solstice</a>
+  <p class="footer-copy">&copy; 2026 Solstice</p>
 </footer>
 
 <script>
@@ -1461,7 +1037,139 @@
   const sections = { work: document.getElementById('work'), about: document.getElementById('about'), contact: document.getElementById('contact') };
   const landingHero = document.querySelector('.landing-hero');
   const landingContent = document.querySelector('.landing-content');
-  const irisWatermark = document.querySelector('.iris-watermark');
+  const solsticeWatermark = document.querySelector('.solstice-watermark');
+
+  // ── Floating orbs + lens flare ───────────────────────────────
+  (function() {
+    var canvas = document.getElementById('particleCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var dpr = window.devicePixelRatio || 1;
+    var w, h;
+    var orbs = [];
+    var flares = [];
+    var ORB_COUNT = 14;
+    var FLARE_COUNT = 5;
+    var time = 0;
+
+    function resize() {
+      w = canvas.offsetWidth;
+      h = canvas.offsetHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Soft floating orbs — large, very faint radial gradients
+    for (var i = 0; i < ORB_COUNT; i++) {
+      orbs.push({
+        x: Math.random() * 1.2 - 0.1,   // normalized 0-1
+        y: Math.random() * 1.2 - 0.1,
+        r: Math.random() * 120 + 60,     // radius in px
+        dx: (Math.random() - 0.5) * 0.08,
+        dy: (Math.random() - 0.5) * 0.06 - 0.02,
+        phase: Math.random() * Math.PI * 2,
+        speed: Math.random() * 0.003 + 0.001,
+        baseAlpha: Math.random() * 0.045 + 0.015,
+        hue: Math.random() < 0.6 ? 0 : 1  // 0=gold, 1=warm white
+      });
+    }
+
+    // Lens flare streaks — thin horizontal highlights that drift
+    for (var j = 0; j < FLARE_COUNT; j++) {
+      flares.push({
+        x: Math.random(),
+        y: 0.2 + Math.random() * 0.5,
+        len: Math.random() * 200 + 100,
+        dx: (Math.random() - 0.5) * 0.04,
+        dy: (Math.random() - 0.5) * 0.01,
+        phase: Math.random() * Math.PI * 2,
+        speed: Math.random() * 0.002 + 0.0008,
+        baseAlpha: Math.random() * 0.03 + 0.01
+      });
+    }
+
+    function draw() {
+      time++;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.save();
+      ctx.scale(dpr, dpr);
+
+      // Draw orbs
+      for (var i = 0; i < orbs.length; i++) {
+        var o = orbs[i];
+        o.x += o.dx / w;
+        o.y += o.dy / h;
+        var pulse = Math.sin(time * o.speed + o.phase);
+        var alpha = o.baseAlpha + pulse * 0.015;
+        if (alpha < 0.005) { alpha = 0.005; }
+
+        // Wrap around
+        if (o.x < -0.15) o.x = 1.15;
+        if (o.x > 1.15) o.x = -0.15;
+        if (o.y < -0.15) o.y = 1.15;
+        if (o.y > 1.15) o.y = -0.15;
+
+        var px = o.x * w;
+        var py = o.y * h;
+        var r = o.r + pulse * 15;
+        var grad = ctx.createRadialGradient(px, py, 0, px, py, r);
+        if (o.hue === 0) {
+          grad.addColorStop(0, 'rgba(200,149,108,' + alpha + ')');
+          grad.addColorStop(0.5, 'rgba(210,185,160,' + (alpha * 0.4) + ')');
+          grad.addColorStop(1, 'rgba(210,185,160,0)');
+        } else {
+          grad.addColorStop(0, 'rgba(245,235,220,' + alpha + ')');
+          grad.addColorStop(0.5, 'rgba(240,230,215,' + (alpha * 0.3) + ')');
+          grad.addColorStop(1, 'rgba(240,230,215,0)');
+        }
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(px, py, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Draw lens flare streaks
+      for (var j = 0; j < flares.length; j++) {
+        var f = flares[j];
+        f.x += f.dx / w;
+        f.y += f.dy / h;
+        if (f.x < -0.2) f.x = 1.2;
+        if (f.x > 1.2) f.x = -0.2;
+        if (f.y < 0.1) f.y = 0.8;
+        if (f.y > 0.9) f.y = 0.2;
+
+        var pulse = Math.sin(time * f.speed + f.phase);
+        var alpha = f.baseAlpha + pulse * 0.015;
+        if (alpha < 0.003) alpha = 0.003;
+
+        var fx = f.x * w;
+        var fy = f.y * h;
+        var halfLen = (f.len + pulse * 30) / 2;
+        var grad = ctx.createLinearGradient(fx - halfLen, fy, fx + halfLen, fy);
+        grad.addColorStop(0, 'rgba(220,200,175,0)');
+        grad.addColorStop(0.3, 'rgba(220,200,175,' + (alpha * 0.6) + ')');
+        grad.addColorStop(0.5, 'rgba(245,235,220,' + alpha + ')');
+        grad.addColorStop(0.7, 'rgba(220,200,175,' + (alpha * 0.6) + ')');
+        grad.addColorStop(1, 'rgba(220,200,175,0)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(fx - halfLen, fy - 0.5, halfLen * 2, 1);
+
+        // Slightly thicker soft band behind
+        var grad2 = ctx.createLinearGradient(fx - halfLen * 0.7, fy, fx + halfLen * 0.7, fy);
+        grad2.addColorStop(0, 'rgba(230,215,195,0)');
+        grad2.addColorStop(0.5, 'rgba(230,215,195,' + (alpha * 0.25) + ')');
+        grad2.addColorStop(1, 'rgba(230,215,195,0)');
+        ctx.fillStyle = grad2;
+        ctx.fillRect(fx - halfLen * 0.7, fy - 3, halfLen * 1.4, 6);
+      }
+
+      ctx.restore();
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
 
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
@@ -1469,7 +1177,7 @@
     // Fade landing content as user scrolls down
     if (landingHero) {
       const heroH = landingHero.offsetHeight;
-      // Phase 1: color to purple (0-20% scroll)
+      // Phase 1: color to gold (0-20% scroll)
       const colorStart = 0;
       const colorEnd = heroH * 0.2;
       const colorProgress = Math.min(Math.max(window.scrollY / colorEnd, 0), 1);
@@ -1479,16 +1187,16 @@
       const fadeProgress = Math.min(Math.max((window.scrollY - fadeStart) / (fadeEnd - fadeStart), 0), 1);
       const opacity = 1 - fadeProgress;
       if (landingContent) landingContent.style.opacity = opacity;
-      // Fade title color to purple
-      const titleIris = document.querySelector('.title-iris');
-      if (titleIris) {
-        const r = Math.round(17 + colorProgress * (107 - 17));
-        const g = Math.round(17 + colorProgress * (63 - 17));
-        const b = Math.round(17 + colorProgress * (160 - 17));
-        titleIris.style.color = `rgb(${r},${g},${b})`;
-        titleIris.parentElement.style.color = `rgb(${r},${g},${b})`;
+      // Fade title color to warm gold
+      const titleSolstice = document.querySelector('.title-solstice');
+      if (titleSolstice) {
+        const r = Math.round(17 + colorProgress * (200 - 17));
+        const g = Math.round(17 + colorProgress * (149 - 17));
+        const b = Math.round(17 + colorProgress * (108 - 17));
+        titleSolstice.style.color = `rgb(${r},${g},${b})`;
+        titleSolstice.parentElement.style.color = `rgb(${r},${g},${b})`;
       }
-      if (irisWatermark) irisWatermark.style.opacity = 0.065 * opacity;
+      if (solsticeWatermark) solsticeWatermark.style.opacity = 0.08 * opacity;
     }
 
     // Highlight active nav link based on scroll position
@@ -1509,104 +1217,363 @@
     });
   });
 
-  // Audio file mapping for tracks
-  const audioMap = {
-    sticky: 'assets/audio/Sticky -- The Burial.wav',
-    sticky2: 'assets/audio/Sticky -- The Heist.wav',
-    cabin1: 'assets/audio/Women in Cabin 10 -The Yacht.m4a',
-    cabin2: 'assets/audio/Women In Cabin 10- Man Overboard.m4a',
-    sherwood: 'assets/audio/Sherwood -- Jerusalem (Arranged for Strings).wav',
-    it1: 'assets/audio/Welcome to Derry IT -- Mean Girls.wav',
-    it2: 'assets/audio/Welcome to Derry IT -- Teddy, Phil and Lily.wav',
-    supergirl: 'assets/audio/Supergirl -- Alien.wav',
-    supergirl2: 'assets/audio/Supergirl -- Lenas Nightmare.wav',
-    otto: 'assets/audio/A Man Called Otto -- La Mer Azure.m4a',
-    pole1: 'assets/audio/Pole to Pole with Will Smith -- Anaconda.m4a',
-    pole2: 'assets/audio/Pole to Pole with Will Smith -- Beautiful but Terrifying.m4a',
-    pole3: 'assets/audio/Pole to Pole with Will Smith -- Hunt and Gather.m4a',
-    pole4: 'assets/audio/Pole to Pole with Will Smith -- Secrets of Nature - .m4a',
-    hostile1: 'assets/audio/Hostile Planet - Beluga .wav',
-    hostile2: 'assets/audio/Hostile Planet - Stranded.m4a',
-    politician1: 'assets/audio/The Politician -- Investigator.wav',
-    politician2: 'assets/audio/The Politician -- Manhattan Lullaby.wav',
-    politician3: 'assets/audio/The Politician -- Scherzo Downtown.wav',
-    challenge: 'assets/audio/The Challenge -- Prepare for the Challenge.wav',
-    nonstop: 'assets/audio/The Challenge -- Nonstop.wav',
-    astra: 'assets/audio/Timothy Schmalz -- Astra Pugnatia.wav',
-    joy: 'assets/audio/Joy of Floating -- Sleep.wav'
-  };
+  // ╔═══════════════════════════════════════════════════════════════════════╗
+  // ║  PROJECT DATA — Add new projects here. The gallery builds itself.   ║
+  // ║                                                                     ║
+  // ║  To add a new project, copy one of the objects below and fill in:   ║
+  // ║    id      — unique short name (e.g. 'myfilm')                      ║
+  // ║    title   — overlay title (set to null for poster-only cards)      ║
+  // ║    credit  — credit line (only needed when title is set)            ║
+  // ║    poster  — path to poster image in assets/posters/                ║
+  // ║    alt     — alt text for the poster image                          ║
+  // ║    tracks  — array of audio track objects (optional)                ║
+  // ║    videos  — array of video objects (optional)                      ║
+  // ║                                                                     ║
+  // ║  Track: { id, title, subtitle, duration, src }                      ║
+  // ║  Video: { src, maxWidth (optional, default '400px') }               ║
+  // ╚═══════════════════════════════════════════════════════════════════════╝
 
-  // Create hidden audio elements
-  const audioElements = {};
-  for (const [trackId, filePath] of Object.entries(audioMap)) {
-    const audio = document.createElement('audio');
-    audio.id = 'audio-' + trackId;
-    audio.src = filePath;
-    document.body.appendChild(audio);
-    audioElements[trackId] = audio;
+  var PROJECTS = [
+    {
+      id: 'sticky',
+      title: 'Sticky',
+      credit: 'Timothy Schmalz, Composer',
+      poster: 'assets/posters/01_sticky.jpg',
+      alt: 'Sticky',
+      tracks: [
+        { id: 'sticky', title: 'Sticky — The Burial', subtitle: 'Original Score', duration: '2:30', src: 'assets/audio/Sticky -- The Burial.wav' },
+        { id: 'sticky2', title: 'Sticky — The Heist', subtitle: 'Original Score', duration: '3:00', src: 'assets/audio/Sticky -- The Heist.wav' },
+      ]
+    },
+    {
+      id: 'cabin10',
+      title: 'The Woman in Cabin 10',
+      credit: 'Flynn Hase Spence, additional music',
+      poster: 'assets/posters/02_The Woman In Cabin 10 2.jpg',
+      alt: 'The Woman in Cabin 10',
+      tracks: [
+        { id: 'cabin1', title: 'Women in Cabin 10 — The Yacht', subtitle: 'Original Score', duration: '3:00', src: 'assets/audio/Women in Cabin 10 -The Yacht.m4a' },
+        { id: 'cabin2', title: 'Women in Cabin 10 — Man Overboard', subtitle: 'Original Score', duration: '2:15', src: 'assets/audio/Women In Cabin 10- Man Overboard.m4a' },
+      ]
+    },
+    {
+      id: 'tron',
+      title: 'Tron: Ares',
+      credit: 'Shalev Alon, score mixer',
+      poster: 'assets/posters/03_Tron_Ares.png',
+      alt: 'Tron: Ares',
+      tracks: [
+        { id: 'tron', title: 'Tron: Ares — Trailer Track', subtitle: 'Trailer Music', duration: '2:00', src: 'assets/audio/Tron Ares Trailer Track.wav' },
+      ]
+    },
+    {
+      id: 'starwars',
+      title: 'Star Wars: Visions',
+      credit: 'Shalev Alon, score mixer',
+      poster: 'assets/posters/03_Star Wars Vision Poster.png',
+      alt: 'Star Wars: Visions',
+      tracks: [
+        { id: 'starwars', title: 'Star Wars — Trailer Track', subtitle: 'Trailer Music', duration: '2:00', src: 'assets/audio/Star Wars Trailer Track.wav' },
+      ]
+    },
+    {
+      id: 'spiderwomen',
+      title: 'Kiss of the Spider Women',
+      credit: 'Shalev Alon, score mixer',
+      poster: 'assets/posters/Kiss Of The Spider Women Poster.jpg',
+      alt: 'Kiss of the Spider Women',
+      tracks: [
+        { id: 'spiderwomen', title: 'Kiss of the Spider Women', subtitle: 'Original Score', duration: '1:35', src: 'assets/audio/Kiss Of The Spider Women Track.wav' },
+      ]
+    },
+    {
+      id: 'it',
+      title: 'Welcome to Derry IT',
+      credit: 'Flynn Hase Spence, additional music',
+      poster: 'assets/posters/04_It.jpeg',
+      alt: 'It',
+      tracks: [
+        { id: 'it1', title: 'Welcome to Derry IT — Mean Girls', subtitle: 'Original Score', duration: '2:50', src: 'assets/audio/Welcome to Derry IT -- Mean Girls.wav' },
+        { id: 'it2', title: 'Welcome to Derry IT — Teddy, Phil and Lily', subtitle: 'Original Score', duration: '3:15', src: 'assets/audio/Welcome to Derry IT -- Teddy, Phil and Lily.wav' },
+      ]
+    },
+    {
+      id: 'supergirl',
+      title: 'Supergirl',
+      credit: 'Timothy Schmalz, composer',
+      poster: 'assets/posters/05_Supergirl.jpg',
+      alt: 'Supergirl',
+      tracks: [
+        { id: 'supergirl', title: 'Supergirl — Alien', subtitle: 'Original Score', duration: '2:40', src: 'assets/audio/Supergirl -- Alien.wav' },
+        { id: 'supergirl2', title: 'Supergirl — Lenas Nightmare', subtitle: 'Original Score', duration: '2:55', src: 'assets/audio/Supergirl -- Lenas Nightmare.wav' },
+      ]
+    },
+    {
+      id: 'sherwood',
+      title: 'Sherwood',
+      credit: 'Timothy Schmalz, additional music',
+      poster: 'assets/posters/06_Sherwood.jpg',
+      alt: 'Sherwood',
+      tracks: [
+        { id: 'sherwood1', title: 'Sherwood — Jerusalem (Arranged for Strings)', subtitle: 'Original Score', duration: '1:28', src: 'assets/audio/Sherwood -- Jerusalem (Arranged for Strings).wav' },
+      ]
+    },
+    {
+      id: 'goldrun',
+      title: 'The Gold Run',
+      credit: 'Timothy Schmalz, additional music',
+      poster: 'assets/posters/06_The Gold Run.jpg',
+      alt: 'The Gold Run',
+      tracks: [
+        { id: 'goldrun', title: 'The Gold Run — Transport Frøya', subtitle: 'Original Score', duration: '2:00', src: 'assets/audio/Gold Transport Frøya.wav' },
+      ]
+    },
+    {
+      id: 'otto',
+      title: 'A Man Called Otto',
+      credit: 'Timothy Schmalz, additional arranger',
+      poster: 'assets/posters/06_A Man Called Otto.jpg',
+      alt: 'A Man Called Otto',
+      tracks: [
+        { id: 'otto', title: 'A Man Called Otto — La Mer Azure', subtitle: 'Original Score', duration: '3:05', src: 'assets/audio/A Man Called Otto -- La Mer Azure.m4a' },
+      ]
+    },
+    {
+      id: 'pole',
+      title: 'Pole to Pole with Will Smith',
+      credit: 'Flynn Hase Spence, additional music',
+      poster: 'assets/posters/07_Pole_to_Pole.jpg',
+      alt: 'Pole to Pole',
+      tracks: [
+        { id: 'pole1', title: 'Pole to Pole with Will Smith — Anaconda', subtitle: 'Original Score', duration: '2:35', src: 'assets/audio/Pole to Pole with Will Smith -- Anaconda.m4a' },
+        { id: 'pole2', title: 'Pole to Pole with Will Smith — Beautiful but Terrifying', subtitle: 'Original Score', duration: '3:10', src: 'assets/audio/Pole to Pole with Will Smith -- Beautiful but Terrifying.m4a' },
+        { id: 'pole3', title: 'Pole to Pole with Will Smith — Hunt and Gather', subtitle: 'Original Score', duration: '2:45', src: 'assets/audio/Pole to Pole with Will Smith -- Hunt and Gather.m4a' },
+        { id: 'pole4', title: 'Pole to Pole with Will Smith — Secrets of Nature', subtitle: 'Original Score', duration: '3:00', src: 'assets/audio/Pole to Pole with Will Smith -- Secrets of Nature - .m4a' },
+      ]
+    },
+    {
+      id: 'hostile',
+      title: 'Hostile Planet',
+      credit: 'Flynn Hase Spence, additional music',
+      poster: 'assets/posters/08_Hostile Planet.jpg',
+      alt: 'Hostile Planet',
+      tracks: [
+        { id: 'hostile1', title: 'Hostile Planet — Beluga', subtitle: 'Original Score', duration: '3:05', src: 'assets/audio/Hostile Planet - Beluga .wav' },
+        { id: 'hostile2', title: 'Hostile Planet — Stranded', subtitle: 'Original Score', duration: '2:50', src: 'assets/audio/Hostile Planet - Stranded.m4a' },
+      ]
+    },
+    {
+      id: 'politician',
+      title: 'The Politician',
+      credit: 'Flynn Hase Spence, additional music',
+      poster: 'assets/posters/09_The_Politician.jpg',
+      alt: 'The Politician',
+      tracks: [
+        { id: 'politician1', title: 'The Politician — Investigator', subtitle: 'Original Score', duration: '2:55', src: 'assets/audio/The Politician -- Investigator.wav' },
+        { id: 'politician2', title: 'The Politician — Manhattan Lullaby', subtitle: 'Original Score', duration: '3:20', src: 'assets/audio/The Politician -- Manhattan Lullaby.wav' },
+        { id: 'politician3', title: 'The Politician — Scherzo Downtown', subtitle: 'Original Score', duration: '2:40', src: 'assets/audio/The Politician -- Scherzo Downtown.wav' },
+      ]
+    },
+    {
+      id: 'coda',
+      title: 'CODA',
+      credit: 'Flynn Hase Spence, trailer music',
+      poster: 'assets/posters/13_Coda Trailer.jpg',
+      alt: 'Coda Trailer',
+      videos: [
+        { src: 'assets/video/CODA Trailer.mp4', maxWidth: '600px' },
+      ]
+    },
+    {
+      id: 'dune',
+      title: 'Dune',
+      credit: 'Flynn Hase Spence, trailer music',
+      poster: 'assets/posters/14_Dune Trailer.jpg',
+      alt: 'Dune Trailer',
+      videos: [
+        { src: 'assets/video/DUNE - Desert Visions Featurette Trailer.mp4', maxWidth: '400px' },
+      ]
+    },
+    {
+      id: 'dontlookup',
+      title: "Don't Look Up",
+      credit: 'Flynn Hase Spence, trailer music',
+      poster: "assets/posters/15_Don't Look Up New.jpeg",
+      alt: "Don't Look Up Trailer",
+      videos: [
+        { src: "assets/video/DON'T LOOK UP - DON'T LOOK UP TRAILER.mp4", maxWidth: '400px' },
+      ]
+    },
+    {
+      id: 'elcamino',
+      title: 'El Camino',
+      credit: 'Flynn Hase Spence, trailer music',
+      poster: 'assets/posters/16_El Camino Trailer.webp',
+      alt: 'El Camino Trailer',
+      videos: [
+        { src: 'assets/video/El Camino! A Breaking Bad Movie - El Camino! TRAILER.mp4', maxWidth: '400px' },
+      ]
+    },
+    {
+      id: 'dreamhorse',
+      title: 'Dream Horse',
+      credit: 'Flynn Hase Spence, trailer music',
+      poster: 'assets/posters/16_Dream Horse.jpg',
+      alt: 'Dream Horse',
+      videos: [
+        { src: 'assets/video/Dream Horse TRAILER.mp4', maxWidth: '400px' },
+      ]
+    },
+    {
+      id: 'faithful',
+      title: 'The Faithful',
+      credit: 'Flynn Hase Spence, additional music',
+      poster: 'assets/posters/The Faithful.jpg',
+      alt: 'The Faithful',
+      tracks: [
+        { id: 'faithful1', title: 'The Faithful — He Spoke to Me', subtitle: 'Original Score', duration: '1:42', src: 'assets/audio/He Spoke to Me - The Faithful.m4a' },
+        { id: 'faithful2', title: 'The Faithful — I Do Love You', subtitle: 'Original Score', duration: '2:24', src: 'assets/audio/I Do Love You - The Faithful.m4a' },
+        { id: 'faithful3', title: 'The Faithful — Jacob and Esau', subtitle: 'Original Score', duration: '0:53', src: 'assets/audio/Jacob and Esau - The Faithful.m4a' },
+      ]
+    },
+    { id: 'mesa', title: null, poster: 'assets/posters/16_Mesa De Regalos.jpeg', alt: 'Mesa De Regalos' },
+    { id: 'lifebelowzero', title: null, poster: 'assets/posters/17_Life Below Zero 2.jpg', alt: 'Life Below Zero' },
+    { id: 'coachella', title: null, poster: 'assets/posters/18_Coachella 2.jpg', alt: 'Coachella' },
+    { id: 'dealnodeal', title: null, poster: 'assets/posters/22_Deal or No Deal Island.jpg', alt: 'Deal or No Deal Island' },
+    { id: 'smallfoot', title: null, poster: 'assets/posters/23_Smallfoot.jpg', alt: 'Smallfoot' },
+    { id: 'jfk', title: null, poster: 'assets/posters/24_JFK Doc 2.jpg', alt: 'JFK Doc' },
+    { id: 'sonic', title: null, poster: 'assets/posters/25_Sonic.webp', alt: 'Sonic' },
+    {
+      id: 'kraven',
+      title: 'Kraven the Hunter',
+      credit: 'Flynn Hase Spence, additional music',
+      poster: 'assets/posters/26_Kraven.jpg',
+      alt: 'Kraven the Hunter',
+      tracks: [
+        { id: 'kraven1', title: 'Kraven the Hunter — I Hunt You', subtitle: 'Original Score', duration: '2:44', src: 'assets/audio/I Hunt You - Kraven the Hunter.m4a' },
+      ]
+    },
+    {
+      id: 'predator',
+      title: 'Predator: Killer of Killers',
+      credit: 'Flynn Hase Spence, additional music',
+      poster: 'assets/posters/Predator Killer of Killers.jpg',
+      alt: 'Predator: Killer of Killers',
+      tracks: [
+        { id: 'predator1', title: 'Predator: Killer of Killers — Sweet Revenge', subtitle: 'Original Score', duration: '7:00', src: 'assets/audio/Sweet Revenge - Predator - Killer of Killers.m4a' },
+      ]
+    },
+    { id: 'tiljail', title: null, poster: 'assets/posters/27_Til Jail Do Us Part.jpg', alt: 'Til Jail Do Us Part' },
+    { id: 'velvet', title: null, poster: 'assets/posters/28_Velvet.jpg', alt: 'Velvet' },
+    {
+      id: 'challenge',
+      title: 'The Challenge',
+      credit: 'Timothy Schmalz, composer',
+      poster: 'assets/posters/10_The_Challenge.jpg',
+      alt: 'The Challenge',
+      tracks: [
+        { id: 'challenge', title: 'The Challenge — Prepare for the Challenge', subtitle: 'Original Score', duration: '3:10', src: 'assets/audio/The Challenge -- Prepare for the Challenge.wav' },
+      ]
+    },
+    { id: 'challengeaus', title: null, poster: 'assets/posters/11_The Challenge Australia.jpg', alt: 'The Challenge Australia' },
+    { id: 'playmobil', title: null, poster: 'assets/posters/12_Playmobil.jpg', alt: 'Playmobil' },
+    {
+      id: 'disneymarvel',
+      title: 'Disneyland Marvel Live Show',
+      credit: 'Shalev Alon, score mixer',
+      poster: 'assets/posters/Disneyland Marvel Live Show Poster.jpg',
+      alt: 'Disneyland Marvel Live Show',
+      tracks: [
+        { id: 'disneymarvel', title: 'Disneyland Infinity War Marvel Land', subtitle: 'Original Score', duration: '1:07', src: 'assets/audio/Disneyland Infinity War Marvel Land.wav' },
+      ]
+    },
+  ];
+
+  var SELECTED_CUES = [
+    { id: 'hewantsjustice', title: 'He Wants Justice', subtitle: 'Timothy Schmalz', duration: '1:18', src: 'assets/audio/He Wants Justice v1.3 2mix.wav' },
+    { id: 'starkiller', title: 'Starkiller', subtitle: 'Timothy Schmalz', duration: '2:02', src: 'assets/audio/DS Starkiller v1.2 2mix.wav' },
+    { id: 'astra', title: 'Astra Pugnatia', subtitle: 'Timothy Schmalz', duration: '1:58', src: 'assets/audio/Timothy Schmalz -- Astra Pugnatia v1.5 2mix.wav' },
+  ];
+
+  // ── Gallery Renderer ────────────────────────────────────────
+  var PLAY_SVG = '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
+  var PAUSE_SVG = '<svg viewBox="0 0 24 24"><rect x="7" y="5" width="3" height="14" fill="currentColor"/><rect x="14" y="5" width="3" height="14" fill="currentColor"/></svg>';
+
+  function buildReelItemHTML(track) {
+    return '<div class="reel-item" data-track="' + track.id + '">' +
+      '<button class="reel-play-btn" aria-label="Play">' + PLAY_SVG + '</button>' +
+      '<div class="reel-info">' +
+        '<div class="reel-title">' + track.title + '</div>' +
+        '<div class="reel-subtitle">' + track.subtitle + '</div>' +
+        '<div class="reel-progress"><div class="reel-progress-bar"></div></div>' +
+      '</div>' +
+      '<span class="reel-duration">' + track.duration + '</span>' +
+    '</div>';
   }
 
-  // Real audio playback
-  const reelItems = document.querySelectorAll('.reel-item');
-  let activeItem = null;
-  let activeAudio = null;
-  let updateInterval = null;
+  function buildPosterCard(project, index) {
+    var hasMedia = (project.tracks && project.tracks.length) || (project.videos && project.videos.length);
+    var dataPoster = hasMedia ? ' data-poster="' + project.id + '"' : '';
+    var delay = Math.min((index + 1) * 0.1, 0.9);
+    var overlayHTML = '';
 
-  reelItems.forEach(item => {
-    const btn = item.querySelector('.reel-play-btn');
-    const trackId = item.getAttribute('data-track');
-    const audio = audioElements[trackId];
-
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      if (activeItem === item) {
-        stopPlayback();
-        return;
+    if (hasMedia) {
+      var mediaHTML = '';
+      if (project.tracks && project.tracks.length) {
+        mediaHTML = '<div class="poster-audio">' + project.tracks.map(buildReelItemHTML).join('') + '</div>';
       }
-
-      stopPlayback();
-      activeItem = item;
-      activeAudio = audio;
-      item.classList.add('active');
-      btn.classList.add('playing');
-      btn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="7" y="5" width="3" height="14" fill="currentColor"/><rect x="14" y="5" width="3" height="14" fill="currentColor"/></svg>';
-
-      const bar = item.querySelector('.reel-progress-bar');
-
-      if (audio) {
-        audio.currentTime = 0;
-        audio.play().catch(err => console.log('Audio play failed:', err));
-
-        updateInterval = setInterval(() => {
-          if (audio.duration) {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            bar.style.width = progress + '%';
-          }
-          if (audio.ended) {
-            stopPlayback();
-          }
-        }, 100);
-
-        audio.addEventListener('ended', () => {
-          if (activeItem === item) {
-            stopPlayback();
-          }
-        }, { once: true });
+      if (project.videos && project.videos.length) {
+        mediaHTML = project.videos.map(function(v) {
+          return '<div class="poster-video">' +
+            '<video width="100%" height="auto" controls style="max-width: ' + (v.maxWidth || '400px') + ';">' +
+            '<source src="' + v.src + '" type="video/mp4">Your browser does not support the video tag.</video></div>';
+        }).join('');
       }
-    });
+      overlayHTML = '<div class="poster-overlay" aria-hidden="true">' +
+        '<h2>' + project.title + '</h2>' +
+        '<p class="poster-credit">' + project.credit + '</p>' +
+        mediaHTML + '</div>';
+    }
+
+    return '<div class="poster-card"' + dataPoster + ' style="animation-delay: ' + delay + 's;">' +
+      '<div class="poster-bg"><img src="' + project.poster + '" alt="' + project.alt + '" loading="lazy"></div>' +
+      overlayHTML + '</div>';
+  }
+
+  // Build poster grid
+  var posterGrid = document.getElementById('posterGrid');
+  posterGrid.innerHTML = PROJECTS.map(buildPosterCard).join('');
+
+  // Build selected cues reel
+  var reelList = document.getElementById('reelList');
+  reelList.innerHTML = SELECTED_CUES.map(buildReelItemHTML).join('');
+
+  // ── Audio engine ────────────────────────────────────────────
+  var allTracks = [];
+  PROJECTS.forEach(function(p) { if (p.tracks) allTracks.push.apply(allTracks, p.tracks); });
+  allTracks.push.apply(allTracks, SELECTED_CUES);
+
+  var audioElements = {};
+  allTracks.forEach(function(track) {
+    var audio = document.createElement('audio');
+    audio.id = 'audio-' + track.id;
+    audio.preload = 'none';
+    audio.src = track.src;
+    document.body.appendChild(audio);
+    audioElements[track.id] = audio;
   });
 
+  var activeItem = null;
+  var activeAudio = null;
+  var updateInterval = null;
+
   function stopPlayback() {
-    if (activeAudio) {
-      activeAudio.pause();
-    }
+    if (activeAudio) activeAudio.pause();
     if (activeItem) {
       activeItem.classList.remove('active');
-      const btn = activeItem.querySelector('.reel-play-btn');
+      var btn = activeItem.querySelector('.reel-play-btn');
       btn.classList.remove('playing');
-      btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
+      btn.innerHTML = PLAY_SVG;
       activeItem.querySelector('.reel-progress-bar').style.width = '0%';
     }
     if (updateInterval) { clearInterval(updateInterval); updateInterval = null; }
@@ -1614,84 +1581,81 @@
     activeAudio = null;
   }
 
-  // Poster overlay interactions — generic handler for all poster cards with data-poster
-  document.querySelectorAll('.poster-card[data-poster]').forEach(card => {
-    const overlay = card.querySelector('.poster-overlay');
-    if (!overlay) return;
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.reel-play-btn');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
 
-    const toggleOverlay = (show) => {
-      card.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      overlay.style.animation = show
-        ? 'posterFade 0.36s ease forwards'
-        : 'posterFade 0.36s ease reverse';
-    };
+    var item = btn.closest('.reel-item');
+    var trackId = item.getAttribute('data-track');
+    var audio = audioElements[trackId];
 
-    card.addEventListener('mouseenter', () => toggleOverlay(true));
-    card.addEventListener('mouseleave', () => toggleOverlay(false));
+    if (activeItem === item) { stopPlayback(); return; }
+
+    stopPlayback();
+    activeItem = item;
+    activeAudio = audio;
+    item.classList.add('active');
+    btn.classList.add('playing');
+    btn.innerHTML = PAUSE_SVG;
+
+    var bar = item.querySelector('.reel-progress-bar');
+    if (audio) {
+      audio.currentTime = 0;
+      audio.play().catch(function(err) { console.log('Audio play failed:', err); });
+      updateInterval = setInterval(function() {
+        if (audio.duration) bar.style.width = (audio.currentTime / audio.duration) * 100 + '%';
+        if (audio.ended) stopPlayback();
+      }, 100);
+      audio.addEventListener('ended', function() { if (activeItem === item) stopPlayback(); }, { once: true });
+    }
   });
 
-  // ═══════════════════════════════════════════════════════════════
-  // MOBILE/TOUCH SUPPORT
-  // ═══════════════════════════════════════════════════════════════
-  const IS_TOUCH_DEVICE = () => {
-    return (
-      ('ontouchstart' in window) ||
-      (navigator.maxTouchPoints > 0) ||
-      (navigator.msMaxTouchPoints > 0)
-    );
-  };
+  // ── Poster overlay interactions ─────────────────────────────
+  var IS_TOUCH = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-  const MobileInteractions = {
-    init() {
-      if (!IS_TOUCH_DEVICE()) return;
-
-      const posterCards = document.querySelectorAll('.poster-card[data-poster]');
-
-      posterCards.forEach(card => {
-        let isOpen = false;
-
-        card.addEventListener('click', (e) => {
-          if (e.target.closest('.reel-play-btn')) return;
-
-          e.preventDefault();
-          isOpen = !isOpen;
-
-          const overlay = card.querySelector('.poster-overlay');
-
-          if (isOpen) {
-            card.classList.add('active');
-            overlay.setAttribute('aria-hidden', 'false');
-            overlay.style.animation = 'posterFade 0.36s ease forwards';
-          } else {
-            card.classList.remove('active');
-            overlay.setAttribute('aria-hidden', 'true');
-            overlay.style.animation = 'posterFade 0.36s ease reverse';
-          }
-        });
-      });
-    }
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      MobileInteractions.init();
+  if (IS_TOUCH) {
+    document.addEventListener('click', function(e) {
+      var card = e.target.closest('.poster-card[data-poster]');
+      if (!card) return;
+      if (e.target.closest('.reel-play-btn') || e.target.closest('video')) return;
+      e.preventDefault();
+      var overlay = card.querySelector('.poster-overlay');
+      var isActive = card.classList.contains('active');
+      card.classList.toggle('active', !isActive);
+      overlay.setAttribute('aria-hidden', isActive ? 'true' : 'false');
+      overlay.style.animation = isActive ? 'posterFade 0.36s ease reverse' : 'posterFade 0.36s ease forwards';
     });
   } else {
-    MobileInteractions.init();
+    document.querySelectorAll('.poster-card[data-poster]').forEach(function(card) {
+      var overlay = card.querySelector('.poster-overlay');
+      card.addEventListener('mouseenter', function() {
+        card.classList.add('active');
+        overlay.setAttribute('aria-hidden', 'false');
+        overlay.style.animation = 'posterFade 0.36s ease forwards';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.classList.remove('active');
+        overlay.setAttribute('aria-hidden', 'true');
+        overlay.style.animation = 'posterFade 0.36s ease reverse';
+      });
+    });
   }
 </script>
 
 <script>
   // Notify visitor
   (function() {
-    const page = 'Black Iris (Single Page)';
+    const page = 'Solstice (Single Page)';
     fetch('/.netlify/functions/notify-visitor', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ page })
     }).catch(err => console.log('Notification sent'));
   })();
+
+
 </script>
 </body>
 </html>

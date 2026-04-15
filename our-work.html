@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Work — Black Iris</title>
+<title>Our Work — Solstice</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@200;300;400;500;600&family=Jost:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5BG9TQ9QZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -66,9 +66,10 @@
   }
 
   .nav-logo {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 300;
+    text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--black);
     text-decoration: none;
@@ -82,7 +83,7 @@
     list-style: none;
   }
   .nav-links a {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.18em;
@@ -100,7 +101,7 @@
     text-align: center;
   }
   .hero h1 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 2.4rem;
     font-weight: 300;
     letter-spacing: 0.14em;
@@ -108,6 +109,7 @@
   }
   .hero-sub {
     margin-top: 1rem;
+    font-family: 'Jost', sans-serif;
     font-size: 0.85rem;
     font-style: italic;
     color: var(--gray);
@@ -130,7 +132,7 @@
     padding: 2rem 2rem 3rem;
   }
   .section-label {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 0.9rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -161,26 +163,11 @@
     z-index: 0;
   }
 
-  /* Scrollbar styling - minimal bar without track lines */
-  .poster-grid-wrapper::-webkit-scrollbar {
-    width: 8px;
-  }
-  .poster-grid-wrapper::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .poster-grid-wrapper::-webkit-scrollbar-thumb {
-    background: var(--light-gray);
-    border-radius: 4px;
-  }
-  .poster-grid-wrapper::-webkit-scrollbar-thumb:hover {
-    background: var(--gray);
-  }
-
-  /* Firefox scrollbar */
-  .poster-grid-wrapper {
-    scrollbar-width: thin;
-    scrollbar-color: var(--light-gray) transparent;
-  }
+  .poster-grid-wrapper::-webkit-scrollbar { width: 8px; }
+  .poster-grid-wrapper::-webkit-scrollbar-track { background: transparent; }
+  .poster-grid-wrapper::-webkit-scrollbar-thumb { background: var(--light-gray); border-radius: 4px; }
+  .poster-grid-wrapper::-webkit-scrollbar-thumb:hover { background: var(--gray); }
+  .poster-grid-wrapper { scrollbar-width: thin; scrollbar-color: var(--light-gray) transparent; }
 
   .poster-grid {
     position: relative;
@@ -204,9 +191,7 @@
     scroll-snap-align: start;
   }
 
-  .poster-card[data-poster] {
-    cursor: pointer;
-  }
+  .poster-card[data-poster] { cursor: pointer; }
 
   .poster-card[data-poster] .poster-overlay {
     position: absolute;
@@ -236,48 +221,28 @@
   }
 
   .poster-overlay h2 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 1.6rem;
     margin-bottom: 0.35rem;
     letter-spacing: 0.08em;
   }
 
   .poster-credit {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 0.8rem;
     color: rgba(0,0,0,0.7);
     margin-bottom: 1.35rem;
     letter-spacing: 0.1em;
   }
 
-  .poster-audio audio {
-    width: 100%;
-    outline: none;
-  }
+  .poster-audio audio { width: 100%; outline: none; }
 
-  .poster-video {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .poster-video video {
-    border-radius: 4px;
-  }
-
-  .poster-card:nth-child(1) { animation-delay: 0.1s; }
-  .poster-card:nth-child(2) { animation-delay: 0.2s; }
-  .poster-card:nth-child(3) { animation-delay: 0.3s; }
-  .poster-card:nth-child(4) { animation-delay: 0.4s; }
-  .poster-card:nth-child(5) { animation-delay: 0.5s; }
-  .poster-card:nth-child(6) { animation-delay: 0.6s; }
-  .poster-card:nth-child(7) { animation-delay: 0.7s; }
-  .poster-card:nth-child(8) { animation-delay: 0.8s; }
-  .poster-card:nth-child(9) { animation-delay: 0.9s; }
+  .poster-video { width: 100%; max-width: 600px; margin: 0 auto; }
+  .poster-video video { border-radius: 4px; }
 
   @keyframes posterIn {
     to { opacity: 1; transform: translateY(0); }
   }
-
   @keyframes posterFade {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -288,13 +253,8 @@
     inset: 0;
     transition: background 0.36s ease;
   }
-  .poster-card:hover .poster-bg {
-    transform: scale(1.04);
-  }
-
-  .poster-card.active .poster-bg {
-    background: white;
-  }
+  .poster-card:hover .poster-bg { transform: scale(1.04); }
+  .poster-card.active .poster-bg { background: white; }
 
   .poster-bg img {
     width: 100%;
@@ -303,12 +263,8 @@
     display: block;
     transition: opacity 0.36s ease;
   }
+  .poster-card.active .poster-bg img { opacity: 0; }
 
-  .poster-card.active .poster-bg img {
-    opacity: 0;
-  }
-
-  /* Poster content overlay */
   .poster-content {
     position: absolute;
     inset: 0;
@@ -323,12 +279,11 @@
     background: linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.7) 100%);
   }
 
-  /* Top label on poster */
   .poster-type {
     position: absolute;
     top: 1.5rem;
     left: 1.5rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 0.55rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -337,9 +292,8 @@
   }
   .poster-card:hover .poster-type { color: rgba(255,255,255,0.6); }
 
-  /* Poster title */
   .poster-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 1.8rem;
     font-weight: 300;
     letter-spacing: 0.1em;
@@ -350,7 +304,7 @@
   }
 
   .poster-year {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 0.62rem;
     letter-spacing: 0.2em;
     color: rgba(255,255,255,0.35);
@@ -358,7 +312,7 @@
   }
 
   .poster-desc {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 0.75rem;
     font-style: italic;
     line-height: 1.7;
@@ -368,12 +322,8 @@
     overflow: hidden;
     transition: max-height 0.5s ease, opacity 0.4s ease;
   }
-  .poster-card:hover .poster-desc {
-    max-height: 80px;
-    opacity: 1;
-  }
+  .poster-card:hover .poster-desc { max-height: 80px; opacity: 1; }
 
-  /* Decorative line on poster */
   .poster-rule {
     width: 28px;
     height: 1px;
@@ -432,10 +382,7 @@
     background-color: var(--black);
     transition: width 0.3s ease, left 0.3s ease;
   }
-  .reel-link:hover::after {
-    width: 100%;
-    left: 0;
-  }
+  .reel-link:hover::after { width: 100%; left: 0; }
   .reel-link:hover { color: var(--black); }
 
   .reel-play-btn {
@@ -469,7 +416,7 @@
   .reel-info { flex: 1; min-width: 0; }
 
   .reel-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 0.95rem;
     font-weight: 400;
     letter-spacing: 0.04em;
@@ -515,9 +462,10 @@
     border-top: 1px solid var(--faint);
   }
   .footer-logo {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.2rem;
     font-weight: 300;
+    text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--black);
     text-decoration: none;
@@ -531,10 +479,7 @@
 
   /* ══════════ RESPONSIVE ══════════ */
   @media (max-width: 900px) {
-    .poster-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
+    .poster-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   }
 
   @media (max-width: 768px) {
@@ -556,44 +501,16 @@
       max-width: 100%;
       margin: 0 auto;
     }
-    .poster-card[data-poster] .poster-overlay {
-      padding: 0.6rem;
-    }
-    .poster-overlay h2 {
-      font-size: 0.75rem;
-      margin-bottom: 0.15rem;
-    }
-    .poster-credit {
-      font-size: 0.45rem;
-      margin-bottom: 0.5rem;
-    }
-    .reel-item {
-      gap: 0.3rem;
-      padding: 0.35rem 0;
-    }
-    .reel-play-btn {
-      width: 20px;
-      height: 20px;
-      min-width: 20px;
-    }
-    .reel-play-btn svg {
-      width: 8px;
-      height: 8px;
-    }
-    .reel-title {
-      font-size: 0.5rem;
-    }
-    .reel-subtitle {
-      font-size: 0.35rem;
-      margin-top: 0;
-    }
-    .reel-duration {
-      font-size: 0.35rem;
-      min-width: 1.5rem;
-    }
-    .reel-progress {
-      margin-top: 0.2rem;
-    }
+    .poster-card[data-poster] .poster-overlay { padding: 0.6rem; }
+    .poster-overlay h2 { font-size: 0.75rem; margin-bottom: 0.15rem; }
+    .poster-credit { font-size: 0.45rem; margin-bottom: 0.5rem; }
+    .reel-item { gap: 0.3rem; padding: 0.35rem 0; }
+    .reel-play-btn { width: 20px; height: 20px; min-width: 20px; }
+    .reel-play-btn svg { width: 8px; height: 8px; }
+    .reel-title { font-size: 0.5rem; }
+    .reel-subtitle { font-size: 0.35rem; margin-top: 0; }
+    .reel-duration { font-size: 0.35rem; min-width: 1.5rem; }
+    .reel-progress { margin-top: 0.2rem; }
     .nav-links { gap: 1.4rem; }
     .nav-links a { font-size: 0.58rem; letter-spacing: 0.2em; }
   }
@@ -603,7 +520,7 @@
 
 <!-- Navigation -->
 <nav class="site-nav" id="siteNav">
-  <a href="index.html" class="nav-logo">Black Iris</a>
+  <a href="index.html" class="nav-logo">Solstice</a>
   <ul class="nav-links">
     <li><a href="our-work.html" class="active">Our Work</a></li>
     <li><a href="about.html">About</a></li>
@@ -617,573 +534,19 @@
   <div class="hero-rule"></div>
 </section>
 
-<!-- Poster Gallery -->
+<!-- Poster Gallery (generated from data) -->
 <section class="section">
   <p class="section-label">Featured Projects</p>
   <div class="poster-grid-wrapper">
-    <div class="poster-grid">
-
-      <div class="poster-card" data-poster="sticky">
-        <div class="poster-bg"><img src="assets/posters/01_sticky.jpg" alt="Sticky"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Sticky</h2>
-          <p class="poster-credit">Timothy Schmalz, Composer</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="sticky">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Sticky — The Burial</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:30</span>
-            </div>
-            <div class="reel-item" data-track="sticky2">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Sticky — The Heist</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">3:00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="cabin10">
-        <div class="poster-bg"><img src="assets/posters/02_The Woman In Cabin 10 2.jpg" alt="The Woman in Cabin 10"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>The Woman in Cabin 10</h2>
-          <p class="poster-credit">Flynn Hase Spence, additional music</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="cabin1">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Women in Cabin 10 — The Yacht</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">3:00</span>
-            </div>
-            <div class="reel-item" data-track="cabin2">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Women in Cabin 10 — Man Overboard</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:15</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="tron">
-        <div class="poster-bg"><img src="assets/posters/03_Tron_Ares.png" alt="Tron: Ares"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Tron: Ares</h2>
-          <p class="poster-credit">Shalev Alon, score mixer</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="tron">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Tron: Ares — Trailer Track</div>
-                <div class="reel-subtitle">Trailer Music</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="starwars">
-        <div class="poster-bg"><img src="assets/posters/03_Star Wars Vision Poster.png" alt="Star Wars: Visions"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Star Wars: Visions</h2>
-          <p class="poster-credit">Shalev Alon, score mixer</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="starwars">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Star Wars — Trailer Track</div>
-                <div class="reel-subtitle">Trailer Music</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="spiderwomen">
-        <div class="poster-bg"><img src="assets/posters/Kiss Of The Spider Women Poster.jpg" alt="Kiss of the Spider Women"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Kiss of the Spider Women</h2>
-          <p class="poster-credit">Shalev Alon, score mixer</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="spiderwomen">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Kiss of the Spider Women</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">1:35</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="it">
-        <div class="poster-bg"><img src="assets/posters/04_It.jpeg" alt="It"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Welcome to Derry IT</h2>
-          <p class="poster-credit">Flynn Hase Spence, additional music</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="it1">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Welcome to Derry IT — Mean Girls</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:50</span>
-            </div>
-            <div class="reel-item" data-track="it2">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Welcome to Derry IT — Teddy, Phil and Lily</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">3:15</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="supergirl">
-        <div class="poster-bg"><img src="assets/posters/05_Supergirl.jpg" alt="Supergirl"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Supergirl</h2>
-          <p class="poster-credit">Timothy Schmalz, composer</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="supergirl">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Supergirl — Alien</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:40</span>
-            </div>
-            <div class="reel-item" data-track="supergirl2">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Supergirl — Lenas Nightmare</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:55</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/06_Sherwood.jpg" alt="Sherwood"></div>
-      </div>
-
-      <div class="poster-card" data-poster="goldrun">
-        <div class="poster-bg"><img src="assets/posters/06_The Gold Run.jpg" alt="The Gold Run"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>The Gold Run</h2>
-          <p class="poster-credit">Timothy Schmalz, additional music</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="goldrun">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">The Gold Run — Transport Frøya</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="otto">
-        <div class="poster-bg"><img src="assets/posters/06_A Man Called Otto.jpg" alt="A Man Called Otto"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>A Man Called Otto</h2>
-          <p class="poster-credit">Timothy Schmalz, additional arranger</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="otto">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">A Man Called Otto — La Mer Azure</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">3:05</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="pole">
-        <div class="poster-bg"><img src="assets/posters/07_Pole_to_Pole.jpg" alt="Pole to Pole"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Pole to Pole with Will Smith</h2>
-          <p class="poster-credit">Flynn Hase Spence, additional music</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="pole1">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Pole to Pole with Will Smith — Anaconda</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:35</span>
-            </div>
-            <div class="reel-item" data-track="pole2">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Pole to Pole with Will Smith — Beautiful but Terrifying</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">3:10</span>
-            </div>
-            <div class="reel-item" data-track="pole3">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Pole to Pole with Will Smith — Hunt and Gather</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:45</span>
-            </div>
-            <div class="reel-item" data-track="pole4">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Pole to Pole with Will Smith — Secrets of Nature</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">3:00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="hostile">
-        <div class="poster-bg"><img src="assets/posters/08_Hostile Planet.jpg" alt="Hostile Planet"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Hostile Planet</h2>
-          <p class="poster-credit">Flynn Hase Spence, additional music</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="hostile1">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Hostile Planet — Beluga</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">3:05</span>
-            </div>
-            <div class="reel-item" data-track="hostile2">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Hostile Planet — Stranded</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:50</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="politician">
-        <div class="poster-bg"><img src="assets/posters/09_The_Politician.jpg" alt="The Politician"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>The Politician</h2>
-          <p class="poster-credit">Flynn Hase Spence, additional music</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="politician1">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">The Politician — Investigator</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:55</span>
-            </div>
-            <div class="reel-item" data-track="politician2">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">The Politician — Manhattan Lullaby</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">3:20</span>
-            </div>
-            <div class="reel-item" data-track="politician3">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">The Politician — Scherzo Downtown</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">2:40</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="coda">
-        <div class="poster-bg"><img src="assets/posters/13_Coda Trailer.jpg" alt="Coda Trailer"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>CODA</h2>
-          <p class="poster-credit">Flynn Hase Spence, trailer music</p>
-          <div class="poster-video">
-            <video width="100%" height="auto" controls style="max-width: 600px;">
-              <source src="assets/video/CODA Trailer.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="dune">
-        <div class="poster-bg"><img src="assets/posters/14_Dune Trailer.jpg" alt="Dune Trailer"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Dune</h2>
-          <p class="poster-credit">Flynn Hase Spence, trailer music</p>
-          <div class="poster-video">
-            <video width="100%" height="auto" controls style="max-width: 400px;">
-              <source src="assets/video/DUNE - Desert Visions Featurette Trailer.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="donlookup">
-        <div class="poster-bg"><img src="assets/posters/15_Don't Look Up New.jpeg" alt="Don't Look Up Trailer"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Don't Look Up</h2>
-          <p class="poster-credit">Flynn Hase Spence, trailer music</p>
-          <div class="poster-video">
-            <video width="100%" height="auto" controls style="max-width: 400px;">
-              <source src="assets/video/DON'T LOOK UP - DON'T LOOK UP TRAILER.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="elcamino">
-        <div class="poster-bg"><img src="assets/posters/16_El Camino Trailer.webp" alt="El Camino Trailer"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>El Camino</h2>
-          <p class="poster-credit">Flynn Hase Spence, trailer music</p>
-          <div class="poster-video">
-            <video width="100%" height="auto" controls style="max-width: 400px;">
-              <source src="assets/video/El Camino! A Breaking Bad Movie - El Camino! TRAILER.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card" data-poster="dreamhorse">
-        <div class="poster-bg"><img src="assets/posters/16_Dream Horse.jpg" alt="Dream Horse"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Dream Horse</h2>
-          <p class="poster-credit">Flynn Hase Spence, trailer music</p>
-          <div class="poster-video">
-            <video width="100%" height="auto" controls style="max-width: 400px;">
-              <source src="assets/video/Dream Horse TRAILER.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/16_Mesa De Regalos.jpeg" alt="Mesa De Regalos"></div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/17_Life Below Zero 2.jpg" alt="Life Below Zero"></div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/18_Coachella 2.jpg" alt="Coachella"></div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/22_Deal or No Deal Island.jpg" alt="Deal or No Deal Island"></div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/23_Smallfoot.jpg" alt="Smallfoot"></div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/24_JFK Doc 2.jpg" alt="JFK Doc"></div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/25_Sonic.webp" alt="Sonic"></div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/26_Kraven.jpg" alt="Kraven"></div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/27_Til Jail Do Us Part.jpg" alt="Til Jail Do Us Part"></div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/28_Velvet.jpg" alt="Velvet"></div>
-      </div>
-
-      <div class="poster-card" data-poster="challenge">
-        <div class="poster-bg"><img src="assets/posters/10_The_Challenge.jpg" alt="The Challenge"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>The Challenge</h2>
-          <p class="poster-credit">Timothy Schmalz, composer</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="challenge">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">The Challenge — Prepare for the Challenge</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">3:10</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/11_The Challenge Australia.jpg" alt="The Challenge Australia"></div>
-      </div>
-
-      <div class="poster-card">
-        <div class="poster-bg"><img src="assets/posters/12_Playmobil.jpg" alt="Playmobil"></div>
-      </div>
-
-      <div class="poster-card" data-poster="disneymarvel">
-        <div class="poster-bg"><img src="assets/posters/Disneyland Marvel Live Show Poster.jpg" alt="Disneyland Marvel Live Show"></div>
-        <div class="poster-overlay" aria-hidden="true">
-          <h2>Disneyland Marvel Live Show</h2>
-          <p class="poster-credit">Shalev Alon, score mixer</p>
-          <div class="poster-audio">
-            <div class="reel-item" data-track="disneymarvel">
-              <button class="reel-play-btn" aria-label="Play">
-                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-              </button>
-              <div class="reel-info">
-                <div class="reel-title">Disneyland Infinity War Marvel Land</div>
-                <div class="reel-subtitle">Original Score</div>
-                <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-              </div>
-              <span class="reel-duration">1:07</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <div class="poster-grid" id="posterGrid"></div>
   </div>
 </section>
 
-<!-- Audio Reel -->
+<!-- Audio Reel (generated from data) -->
 <section class="reel-section">
   <div class="section" style="padding-bottom: 3rem;">
     <p class="section-label">Selected Cues</p>
-    <div class="reel-list">
-
-      <div class="reel-item" data-track="starkiller">
-        <button class="reel-play-btn" aria-label="Play">
-          <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-        </button>
-        <div class="reel-info">
-          <div class="reel-title">Starkiller</div>
-          <div class="reel-subtitle">Timothy Schmalz</div>
-          <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-        </div>
-        <span class="reel-duration">2:02</span>
-      </div>
-
-      <div class="reel-item" data-track="astra">
-        <button class="reel-play-btn" aria-label="Play">
-          <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
-        </button>
-        <div class="reel-info">
-          <div class="reel-title">Astra Pugnatia</div>
-          <div class="reel-subtitle">Timothy Schmalz</div>
-          <div class="reel-progress"><div class="reel-progress-bar"></div></div>
-        </div>
-        <span class="reel-duration">1:58</span>
-      </div>
-
-    </div>
+    <div class="reel-list" id="reelList"></div>
   </div>
 </section>
 
@@ -1198,701 +561,539 @@
 
 <!-- Footer -->
 <footer class="site-footer">
-  <a href="index.html" class="footer-logo">Black Iris</a>
-  <p class="footer-copy">&copy; 2026 Black Iris</p>
+  <a href="index.html" class="footer-logo">Solstice</a>
+  <p class="footer-copy">&copy; 2026 Solstice</p>
 </footer>
 
 <script>
-  // Nav scroll
-  const nav = document.getElementById('siteNav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
+// ╔═══════════════════════════════════════════════════════════════════════╗
+// ║  PROJECT DATA — Add new projects here. The gallery builds itself.   ║
+// ║                                                                     ║
+// ║  To add a new project, copy one of the objects below and fill in:   ║
+// ║    id      — unique short name (e.g. 'myfilm')                      ║
+// ║    title   — overlay title (set to null for poster-only cards)      ║
+// ║    credit  — credit line (only needed when title is set)            ║
+// ║    poster  — path to poster image in assets/posters/                ║
+// ║    alt     — alt text for the poster image                          ║
+// ║    tracks  — array of audio track objects (optional)                ║
+// ║    videos  — array of video objects (optional)                      ║
+// ║                                                                     ║
+// ║  Track: { id, title, subtitle, duration, src }                      ║
+// ║  Video: { src, maxWidth (optional, default '400px') }               ║
+// ╚═══════════════════════════════════════════════════════════════════════╝
+
+const PROJECTS = [
+  {
+    id: 'sticky',
+    title: 'Sticky',
+    credit: 'Timothy Schmalz, Composer',
+    poster: 'assets/posters/01_sticky.jpg',
+    alt: 'Sticky',
+    tracks: [
+      { id: 'sticky', title: 'Sticky — The Burial', subtitle: 'Original Score', duration: '2:30', src: 'assets/audio/Sticky -- The Burial.wav' },
+      { id: 'sticky2', title: 'Sticky — The Heist', subtitle: 'Original Score', duration: '3:00', src: 'assets/audio/Sticky -- The Heist.wav' },
+    ]
+  },
+  {
+    id: 'cabin10',
+    title: 'The Woman in Cabin 10',
+    credit: 'Flynn Hase Spence, additional music',
+    poster: 'assets/posters/02_The Woman In Cabin 10 2.jpg',
+    alt: 'The Woman in Cabin 10',
+    tracks: [
+      { id: 'cabin1', title: 'Women in Cabin 10 — The Yacht', subtitle: 'Original Score', duration: '3:00', src: 'assets/audio/Women in Cabin 10 -The Yacht.m4a' },
+      { id: 'cabin2', title: 'Women in Cabin 10 — Man Overboard', subtitle: 'Original Score', duration: '2:15', src: 'assets/audio/Women In Cabin 10- Man Overboard.m4a' },
+    ]
+  },
+  {
+    id: 'tron',
+    title: 'Tron: Ares',
+    credit: 'Shalev Alon, score mixer',
+    poster: 'assets/posters/03_Tron_Ares.png',
+    alt: 'Tron: Ares',
+    tracks: [
+      { id: 'tron', title: 'Tron: Ares — Trailer Track', subtitle: 'Trailer Music', duration: '2:00', src: 'assets/audio/Tron Ares Trailer Track.wav' },
+    ]
+  },
+  {
+    id: 'starwars',
+    title: 'Star Wars: Visions',
+    credit: 'Shalev Alon, score mixer',
+    poster: 'assets/posters/03_Star Wars Vision Poster.png',
+    alt: 'Star Wars: Visions',
+    tracks: [
+      { id: 'starwars', title: 'Star Wars — Trailer Track', subtitle: 'Trailer Music', duration: '2:00', src: 'assets/audio/Star Wars Trailer Track.wav' },
+    ]
+  },
+  {
+    id: 'spiderwomen',
+    title: 'Kiss of the Spider Women',
+    credit: 'Shalev Alon, score mixer',
+    poster: 'assets/posters/Kiss Of The Spider Women Poster.jpg',
+    alt: 'Kiss of the Spider Women',
+    tracks: [
+      { id: 'spiderwomen', title: 'Kiss of the Spider Women', subtitle: 'Original Score', duration: '1:35', src: 'assets/audio/Kiss Of The Spider Women Track.wav' },
+    ]
+  },
+  {
+    id: 'it',
+    title: 'Welcome to Derry IT',
+    credit: 'Flynn Hase Spence, additional music',
+    poster: 'assets/posters/04_It.jpeg',
+    alt: 'It',
+    tracks: [
+      { id: 'it1', title: 'Welcome to Derry IT — Mean Girls', subtitle: 'Original Score', duration: '2:50', src: 'assets/audio/Welcome to Derry IT -- Mean Girls.wav' },
+      { id: 'it2', title: 'Welcome to Derry IT — Teddy, Phil and Lily', subtitle: 'Original Score', duration: '3:15', src: 'assets/audio/Welcome to Derry IT -- Teddy, Phil and Lily.wav' },
+    ]
+  },
+  {
+    id: 'supergirl',
+    title: 'Supergirl',
+    credit: 'Timothy Schmalz, composer',
+    poster: 'assets/posters/05_Supergirl.jpg',
+    alt: 'Supergirl',
+    tracks: [
+      { id: 'supergirl', title: 'Supergirl — Alien', subtitle: 'Original Score', duration: '2:40', src: 'assets/audio/Supergirl -- Alien.wav' },
+      { id: 'supergirl2', title: 'Supergirl — Lenas Nightmare', subtitle: 'Original Score', duration: '2:55', src: 'assets/audio/Supergirl -- Lenas Nightmare.wav' },
+    ]
+  },
+  {
+    id: 'sherwood',
+    title: 'Sherwood',
+    credit: 'Timothy Schmalz, additional music',
+    poster: 'assets/posters/06_Sherwood.jpg',
+    alt: 'Sherwood',
+    tracks: [
+      { id: 'sherwood1', title: 'Sherwood — Jerusalem (Arranged for Strings)', subtitle: 'Original Score', duration: '1:28', src: 'assets/audio/Sherwood -- Jerusalem (Arranged for Strings).wav' },
+    ]
+  },
+  {
+    id: 'goldrun',
+    title: 'The Gold Run',
+    credit: 'Timothy Schmalz, additional music',
+    poster: 'assets/posters/06_The Gold Run.jpg',
+    alt: 'The Gold Run',
+    tracks: [
+      { id: 'goldrun', title: 'The Gold Run — Transport Frøya', subtitle: 'Original Score', duration: '2:00', src: 'assets/audio/Gold Transport Frøya.wav' },
+    ]
+  },
+  {
+    id: 'otto',
+    title: 'A Man Called Otto',
+    credit: 'Timothy Schmalz, additional arranger',
+    poster: 'assets/posters/06_A Man Called Otto.jpg',
+    alt: 'A Man Called Otto',
+    tracks: [
+      { id: 'otto', title: 'A Man Called Otto — La Mer Azure', subtitle: 'Original Score', duration: '3:05', src: 'assets/audio/A Man Called Otto -- La Mer Azure.m4a' },
+    ]
+  },
+  {
+    id: 'pole',
+    title: 'Pole to Pole with Will Smith',
+    credit: 'Flynn Hase Spence, additional music',
+    poster: 'assets/posters/07_Pole_to_Pole.jpg',
+    alt: 'Pole to Pole',
+    tracks: [
+      { id: 'pole1', title: 'Pole to Pole with Will Smith — Anaconda', subtitle: 'Original Score', duration: '2:35', src: 'assets/audio/Pole to Pole with Will Smith -- Anaconda.m4a' },
+      { id: 'pole2', title: 'Pole to Pole with Will Smith — Beautiful but Terrifying', subtitle: 'Original Score', duration: '3:10', src: 'assets/audio/Pole to Pole with Will Smith -- Beautiful but Terrifying.m4a' },
+      { id: 'pole3', title: 'Pole to Pole with Will Smith — Hunt and Gather', subtitle: 'Original Score', duration: '2:45', src: 'assets/audio/Pole to Pole with Will Smith -- Hunt and Gather.m4a' },
+      { id: 'pole4', title: 'Pole to Pole with Will Smith — Secrets of Nature', subtitle: 'Original Score', duration: '3:00', src: 'assets/audio/Pole to Pole with Will Smith -- Secrets of Nature - .m4a' },
+    ]
+  },
+  {
+    id: 'hostile',
+    title: 'Hostile Planet',
+    credit: 'Flynn Hase Spence, additional music',
+    poster: 'assets/posters/08_Hostile Planet.jpg',
+    alt: 'Hostile Planet',
+    tracks: [
+      { id: 'hostile1', title: 'Hostile Planet — Beluga', subtitle: 'Original Score', duration: '3:05', src: 'assets/audio/Hostile Planet - Beluga .wav' },
+      { id: 'hostile2', title: 'Hostile Planet — Stranded', subtitle: 'Original Score', duration: '2:50', src: 'assets/audio/Hostile Planet - Stranded.m4a' },
+    ]
+  },
+  {
+    id: 'politician',
+    title: 'The Politician',
+    credit: 'Flynn Hase Spence, additional music',
+    poster: 'assets/posters/09_The_Politician.jpg',
+    alt: 'The Politician',
+    tracks: [
+      { id: 'politician1', title: 'The Politician — Investigator', subtitle: 'Original Score', duration: '2:55', src: 'assets/audio/The Politician -- Investigator.wav' },
+      { id: 'politician2', title: 'The Politician — Manhattan Lullaby', subtitle: 'Original Score', duration: '3:20', src: 'assets/audio/The Politician -- Manhattan Lullaby.wav' },
+      { id: 'politician3', title: 'The Politician — Scherzo Downtown', subtitle: 'Original Score', duration: '2:40', src: 'assets/audio/The Politician -- Scherzo Downtown.wav' },
+    ]
+  },
+  {
+    id: 'coda',
+    title: 'CODA',
+    credit: 'Flynn Hase Spence, trailer music',
+    poster: 'assets/posters/13_Coda Trailer.jpg',
+    alt: 'Coda Trailer',
+    videos: [
+      { src: 'assets/video/CODA Trailer.mp4', maxWidth: '600px' },
+    ]
+  },
+  {
+    id: 'dune',
+    title: 'Dune',
+    credit: 'Flynn Hase Spence, trailer music',
+    poster: 'assets/posters/14_Dune Trailer.jpg',
+    alt: 'Dune Trailer',
+    videos: [
+      { src: 'assets/video/DUNE - Desert Visions Featurette Trailer.mp4', maxWidth: '400px' },
+    ]
+  },
+  {
+    id: 'dontlookup',
+    title: "Don't Look Up",
+    credit: 'Flynn Hase Spence, trailer music',
+    poster: "assets/posters/15_Don't Look Up New.jpeg",
+    alt: "Don't Look Up Trailer",
+    videos: [
+      { src: "assets/video/DON'T LOOK UP - DON'T LOOK UP TRAILER.mp4", maxWidth: '400px' },
+    ]
+  },
+  {
+    id: 'elcamino',
+    title: 'El Camino',
+    credit: 'Flynn Hase Spence, trailer music',
+    poster: 'assets/posters/16_El Camino Trailer.webp',
+    alt: 'El Camino Trailer',
+    videos: [
+      { src: 'assets/video/El Camino! A Breaking Bad Movie - El Camino! TRAILER.mp4', maxWidth: '400px' },
+    ]
+  },
+  {
+    id: 'dreamhorse',
+    title: 'Dream Horse',
+    credit: 'Flynn Hase Spence, trailer music',
+    poster: 'assets/posters/16_Dream Horse.jpg',
+    alt: 'Dream Horse',
+    videos: [
+      { src: 'assets/video/Dream Horse TRAILER.mp4', maxWidth: '400px' },
+    ]
+  },
+  {
+    id: 'faithful',
+    title: 'The Faithful',
+    credit: 'Flynn Hase Spence, additional music',
+    poster: 'assets/posters/The Faithful.jpg',
+    alt: 'The Faithful',
+    tracks: [
+      { id: 'faithful1', title: 'The Faithful — He Spoke to Me', subtitle: 'Original Score', duration: '1:42', src: 'assets/audio/He Spoke to Me - The Faithful.m4a' },
+      { id: 'faithful2', title: 'The Faithful — I Do Love You', subtitle: 'Original Score', duration: '2:24', src: 'assets/audio/I Do Love You - The Faithful.m4a' },
+      { id: 'faithful3', title: 'The Faithful — Jacob and Esau', subtitle: 'Original Score', duration: '0:53', src: 'assets/audio/Jacob and Esau - The Faithful.m4a' },
+    ]
+  },
+  {
+    id: 'mesa',
+    title: null,
+    poster: 'assets/posters/16_Mesa De Regalos.jpeg',
+    alt: 'Mesa De Regalos',
+  },
+  {
+    id: 'lifebelowzero',
+    title: null,
+    poster: 'assets/posters/17_Life Below Zero 2.jpg',
+    alt: 'Life Below Zero',
+  },
+  {
+    id: 'coachella',
+    title: null,
+    poster: 'assets/posters/18_Coachella 2.jpg',
+    alt: 'Coachella',
+  },
+  {
+    id: 'dealnodeal',
+    title: null,
+    poster: 'assets/posters/22_Deal or No Deal Island.jpg',
+    alt: 'Deal or No Deal Island',
+  },
+  {
+    id: 'smallfoot',
+    title: null,
+    poster: 'assets/posters/23_Smallfoot.jpg',
+    alt: 'Smallfoot',
+  },
+  {
+    id: 'jfk',
+    title: null,
+    poster: 'assets/posters/24_JFK Doc 2.jpg',
+    alt: 'JFK Doc',
+  },
+  {
+    id: 'sonic',
+    title: null,
+    poster: 'assets/posters/25_Sonic.webp',
+    alt: 'Sonic',
+  },
+  {
+    id: 'kraven',
+    title: 'Kraven the Hunter',
+    credit: 'Flynn Hase Spence, additional music',
+    poster: 'assets/posters/26_Kraven.jpg',
+    alt: 'Kraven the Hunter',
+    tracks: [
+      { id: 'kraven1', title: 'Kraven the Hunter — I Hunt You', subtitle: 'Original Score', duration: '2:44', src: 'assets/audio/I Hunt You - Kraven the Hunter.m4a' },
+    ]
+  },
+  {
+    id: 'predator',
+    title: 'Predator: Killer of Killers',
+    credit: 'Flynn Hase Spence, additional music',
+    poster: 'assets/posters/Predator Killer of Killers.jpg',
+    alt: 'Predator: Killer of Killers',
+    tracks: [
+      { id: 'predator1', title: 'Predator: Killer of Killers — Sweet Revenge', subtitle: 'Original Score', duration: '7:00', src: 'assets/audio/Sweet Revenge - Predator - Killer of Killers.m4a' },
+    ]
+  },
+  {
+    id: 'tiljail',
+    title: null,
+    poster: 'assets/posters/27_Til Jail Do Us Part.jpg',
+    alt: 'Til Jail Do Us Part',
+  },
+  {
+    id: 'velvet',
+    title: null,
+    poster: 'assets/posters/28_Velvet.jpg',
+    alt: 'Velvet',
+  },
+  {
+    id: 'challenge',
+    title: 'The Challenge',
+    credit: 'Timothy Schmalz, composer',
+    poster: 'assets/posters/10_The_Challenge.jpg',
+    alt: 'The Challenge',
+    tracks: [
+      { id: 'challenge', title: 'The Challenge — Prepare for the Challenge', subtitle: 'Original Score', duration: '3:10', src: 'assets/audio/The Challenge -- Prepare for the Challenge.wav' },
+    ]
+  },
+  {
+    id: 'challengeaus',
+    title: null,
+    poster: 'assets/posters/11_The Challenge Australia.jpg',
+    alt: 'The Challenge Australia',
+  },
+  {
+    id: 'playmobil',
+    title: null,
+    poster: 'assets/posters/12_Playmobil.jpg',
+    alt: 'Playmobil',
+  },
+  {
+    id: 'disneymarvel',
+    title: 'Disneyland Marvel Live Show',
+    credit: 'Shalev Alon, score mixer',
+    poster: 'assets/posters/Disneyland Marvel Live Show Poster.jpg',
+    alt: 'Disneyland Marvel Live Show',
+    tracks: [
+      { id: 'disneymarvel', title: 'Disneyland Infinity War Marvel Land', subtitle: 'Original Score', duration: '1:07', src: 'assets/audio/Disneyland Infinity War Marvel Land.wav' },
+    ]
+  },
+];
+
+// Standalone cues for the "Selected Cues" reel section
+const SELECTED_CUES = [
+  { id: 'hewantsjustice', title: 'He Wants Justice', subtitle: 'Timothy Schmalz', duration: '1:18', src: 'assets/audio/He Wants Justice v1.3 2mix.wav' },
+  { id: 'starkiller', title: 'Starkiller', subtitle: 'Timothy Schmalz', duration: '2:02', src: 'assets/audio/DS Starkiller v1.2 2mix.wav' },
+  { id: 'astra', title: 'Astra Pugnatia', subtitle: 'Timothy Schmalz', duration: '1:58', src: 'assets/audio/Timothy Schmalz -- Astra Pugnatia v1.5 2mix.wav' },
+];
+
+
+// ╔═══════════════════════════════════════════════════════════════════════╗
+// ║  GALLERY RENDERER — No need to edit below when adding projects.     ║
+// ╚═══════════════════════════════════════════════════════════════════════╝
+
+const PLAY_SVG = '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
+const PAUSE_SVG = '<svg viewBox="0 0 24 24"><rect x="7" y="5" width="3" height="14" fill="currentColor"/><rect x="14" y="5" width="3" height="14" fill="currentColor"/></svg>';
+
+function buildReelItemHTML(track) {
+  return `
+    <div class="reel-item" data-track="${track.id}">
+      <button class="reel-play-btn" aria-label="Play">${PLAY_SVG}</button>
+      <div class="reel-info">
+        <div class="reel-title">${track.title}</div>
+        <div class="reel-subtitle">${track.subtitle}</div>
+        <div class="reel-progress"><div class="reel-progress-bar"></div></div>
+      </div>
+      <span class="reel-duration">${track.duration}</span>
+    </div>`;
+}
+
+function buildPosterCard(project, index) {
+  const hasMedia = (project.tracks && project.tracks.length) || (project.videos && project.videos.length);
+  const dataPoster = hasMedia ? ` data-poster="${project.id}"` : '';
+  const delay = Math.min((index + 1) * 0.1, 0.9);
+
+  let overlayHTML = '';
+  if (hasMedia) {
+    let mediaHTML = '';
+
+    if (project.tracks && project.tracks.length) {
+      mediaHTML = '<div class="poster-audio">' + project.tracks.map(buildReelItemHTML).join('') + '</div>';
+    }
+    if (project.videos && project.videos.length) {
+      mediaHTML = project.videos.map(function(v) {
+        return '<div class="poster-video">' +
+          '<video width="100%" height="auto" controls style="max-width: ' + (v.maxWidth || '400px') + ';">' +
+          '<source src="' + v.src + '" type="video/mp4">' +
+          'Your browser does not support the video tag.' +
+          '</video></div>';
+      }).join('');
+    }
+
+    overlayHTML =
+      '<div class="poster-overlay" aria-hidden="true">' +
+      '<h2>' + project.title + '</h2>' +
+      '<p class="poster-credit">' + project.credit + '</p>' +
+      mediaHTML +
+      '</div>';
+  }
+
+  return '<div class="poster-card"' + dataPoster + ' style="animation-delay: ' + delay + 's;">' +
+    '<div class="poster-bg"><img src="' + project.poster + '" alt="' + project.alt + '" loading="lazy"></div>' +
+    overlayHTML +
+    '</div>';
+}
+
+// Build poster grid
+var posterGrid = document.getElementById('posterGrid');
+posterGrid.innerHTML = PROJECTS.map(buildPosterCard).join('');
+
+// Build selected cues reel
+var reelList = document.getElementById('reelList');
+reelList.innerHTML = SELECTED_CUES.map(buildReelItemHTML).join('');
+
+// ── Audio engine ──────────────────────────────────────────────
+var allTracks = [];
+PROJECTS.forEach(function(p) {
+  if (p.tracks) allTracks.push.apply(allTracks, p.tracks);
+});
+allTracks.push.apply(allTracks, SELECTED_CUES);
+
+var audioElements = {};
+allTracks.forEach(function(track) {
+  var audio = document.createElement('audio');
+  audio.id = 'audio-' + track.id;
+  audio.preload = 'none';
+  audio.src = track.src;
+  document.body.appendChild(audio);
+  audioElements[track.id] = audio;
+});
+
+var activeItem = null;
+var activeAudio = null;
+var updateInterval = null;
+
+function stopPlayback() {
+  if (activeAudio) activeAudio.pause();
+  if (activeItem) {
+    activeItem.classList.remove('active');
+    var btn = activeItem.querySelector('.reel-play-btn');
+    btn.classList.remove('playing');
+    btn.innerHTML = PLAY_SVG;
+    activeItem.querySelector('.reel-progress-bar').style.width = '0%';
+  }
+  if (updateInterval) { clearInterval(updateInterval); updateInterval = null; }
+  activeItem = null;
+  activeAudio = null;
+}
+
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.reel-play-btn');
+  if (!btn) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+
+  var item = btn.closest('.reel-item');
+  var trackId = item.getAttribute('data-track');
+  var audio = audioElements[trackId];
+
+  if (activeItem === item) {
+    stopPlayback();
+    return;
+  }
+
+  stopPlayback();
+  activeItem = item;
+  activeAudio = audio;
+  item.classList.add('active');
+  btn.classList.add('playing');
+  btn.innerHTML = PAUSE_SVG;
+
+  var bar = item.querySelector('.reel-progress-bar');
+  if (audio) {
+    audio.currentTime = 0;
+    audio.play().catch(function(err) { console.log('Audio play failed:', err); });
+
+    updateInterval = setInterval(function() {
+      if (audio.duration) {
+        bar.style.width = (audio.currentTime / audio.duration) * 100 + '%';
+      }
+      if (audio.ended) stopPlayback();
+    }, 100);
+
+    audio.addEventListener('ended', function() {
+      if (activeItem === item) stopPlayback();
+    }, { once: true });
+  }
+});
+
+// ── Poster overlay interactions (single generic handler) ──────
+var IS_TOUCH = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+if (IS_TOUCH) {
+  document.addEventListener('click', function(e) {
+    var card = e.target.closest('.poster-card[data-poster]');
+    if (!card) return;
+    if (e.target.closest('.reel-play-btn') || e.target.closest('video')) return;
+
+    e.preventDefault();
+    var overlay = card.querySelector('.poster-overlay');
+    var isActive = card.classList.contains('active');
+
+    card.classList.toggle('active', !isActive);
+    overlay.setAttribute('aria-hidden', isActive ? 'true' : 'false');
+    overlay.style.animation = isActive
+      ? 'posterFade 0.36s ease reverse'
+      : 'posterFade 0.36s ease forwards';
   });
+} else {
+  document.querySelectorAll('.poster-card[data-poster]').forEach(function(card) {
+    var overlay = card.querySelector('.poster-overlay');
 
-  // Audio file mapping for tracks
-  const audioMap = {
-    sticky: 'assets/audio/Sticky -- The Burial.wav',
-    sticky2: 'assets/audio/Sticky -- The Heist.wav',
-    cabin1: 'assets/audio/Women in Cabin 10 -The Yacht.m4a',
-    cabin2: 'assets/audio/Women In Cabin 10- Man Overboard.m4a',
-    tron: 'assets/audio/Tron Ares Trailer Track.wav',
-    starwars: 'assets/audio/Star Wars Trailer Track.wav',
-    it1: 'assets/audio/Welcome to Derry IT -- Mean Girls.wav',
-    it2: 'assets/audio/Welcome to Derry IT -- Teddy, Phil and Lily.wav',
-    supergirl: 'assets/audio/Supergirl -- Alien.wav',
-    supergirl2: 'assets/audio/Supergirl -- Lenas Nightmare.wav',
-    goldrun: 'assets/audio/Gold Transport Frøya.wav',
-    otto: 'assets/audio/A Man Called Otto -- La Mer Azure.m4a',
-    pole1: 'assets/audio/Pole to Pole with Will Smith -- Anaconda.m4a',
-    pole2: 'assets/audio/Pole to Pole with Will Smith -- Beautiful but Terrifying.m4a',
-    pole3: 'assets/audio/Pole to Pole with Will Smith -- Hunt and Gather.m4a',
-    pole4: 'assets/audio/Pole to Pole with Will Smith -- Secrets of Nature - .m4a',
-    hostile1: 'assets/audio/Hostile Planet - Beluga .wav',
-    hostile2: 'assets/audio/Hostile Planet - Stranded.m4a',
-    politician1: 'assets/audio/The Politician -- Investigator.wav',
-    politician2: 'assets/audio/The Politician -- Manhattan Lullaby.wav',
-    politician3: 'assets/audio/The Politician -- Scherzo Downtown.wav',
-    challenge: 'assets/audio/The Challenge -- Prepare for the Challenge.wav',
-    astra: 'assets/audio/Timothy Schmalz -- Astra Pugnatia v1.5 2mix.wav',
-    starkiller: 'assets/audio/DS Starkiller v1.2 2mix.wav',
-    spiderwomen: 'assets/audio/Kiss Of The Spider Women Track.wav',
-    disneymarvel: 'assets/audio/Disneyland Infinity War Marvel Land.wav'
-  };
+    card.addEventListener('mouseenter', function() {
+      card.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
+      overlay.style.animation = 'posterFade 0.36s ease forwards';
+    });
 
-  // Create hidden audio elements
-  const audioElements = {};
-  for (const [trackId, filePath] of Object.entries(audioMap)) {
-    const audio = document.createElement('audio');
-    audio.id = 'audio-' + trackId;
-    audio.src = filePath;
-    document.body.appendChild(audio);
-    audioElements[trackId] = audio;
-  }
-
-  // Real audio playback
-  const reelItems = document.querySelectorAll('.reel-item');
-  let activeItem = null;
-  let activeAudio = null;
-  let updateInterval = null;
-
-  reelItems.forEach(item => {
-    const btn = item.querySelector('.reel-play-btn');
-    const trackId = item.getAttribute('data-track');
-    const audio = audioElements[trackId];
-
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      if (activeItem === item) {
-        stopPlayback();
-        return;
-      }
-
-      stopPlayback();
-      activeItem = item;
-      activeAudio = audio;
-      item.classList.add('active');
-      btn.classList.add('playing');
-      btn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="7" y="5" width="3" height="14" fill="currentColor"/><rect x="14" y="5" width="3" height="14" fill="currentColor"/></svg>';
-
-      const bar = item.querySelector('.reel-progress-bar');
-
-      if (audio) {
-        audio.currentTime = 0;
-        audio.play().catch(err => console.log('Audio play failed:', err));
-
-        updateInterval = setInterval(() => {
-          if (audio.duration) {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            bar.style.width = progress + '%';
-          }
-          if (audio.ended) {
-            stopPlayback();
-          }
-        }, 100);
-
-        audio.addEventListener('ended', () => {
-          if (activeItem === item) {
-            stopPlayback();
-          }
-        }, { once: true });
-      }
+    card.addEventListener('mouseleave', function() {
+      card.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
+      overlay.style.animation = 'posterFade 0.36s ease reverse';
     });
   });
-
-  function stopPlayback() {
-    if (activeAudio) {
-      activeAudio.pause();
-    }
-    if (activeItem) {
-      activeItem.classList.remove('active');
-      const btn = activeItem.querySelector('.reel-play-btn');
-      btn.classList.remove('playing');
-      btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
-      activeItem.querySelector('.reel-progress-bar').style.width = '0%';
-    }
-    if (updateInterval) { clearInterval(updateInterval); updateInterval = null; }
-    activeItem = null;
-    activeAudio = null;
-  }
-
-  // Poster overlay interactions - visibility only, does not affect playback
-  // Audio continues playing even when poster overlay is hidden
-  // Poster overlay interaction (sticky)
-  const stickyCard = document.querySelector('.poster-card[data-poster="sticky"]');
-  if (stickyCard) {
-    const overlay = stickyCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      stickyCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    stickyCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    stickyCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (cabin10)
-  const cabinCard = document.querySelector('.poster-card[data-poster="cabin10"]');
-  if (cabinCard) {
-    const overlay = cabinCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      cabinCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    cabinCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    cabinCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (sherwood)
-  const sherwoodCard = document.querySelector('.poster-card[data-poster="sherwood"]');
-  if (sherwoodCard) {
-    const overlay = sherwoodCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      sherwoodCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    sherwoodCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    sherwoodCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (tron)
-  const tronCard = document.querySelector('.poster-card[data-poster="tron"]');
-  if (tronCard) {
-    const overlay = tronCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      tronCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    tronCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    tronCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (starwars)
-  const starwarsCard = document.querySelector('.poster-card[data-poster="starwars"]');
-  if (starwarsCard) {
-    const overlay = starwarsCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      starwarsCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    starwarsCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    starwarsCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (goldrun)
-  const goldrunCard = document.querySelector('.poster-card[data-poster="goldrun"]');
-  if (goldrunCard) {
-    const overlay = goldrunCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      goldrunCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    goldrunCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    goldrunCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (it)
-  const itCard = document.querySelector('.poster-card[data-poster="it"]');
-  if (itCard) {
-    const overlay = itCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      itCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    itCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    itCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (supergirl)
-  const supergirlfCard = document.querySelector('.poster-card[data-poster="supergirl"]');
-  if (supergirlfCard) {
-    const overlay = supergirlfCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      supergirlfCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    supergirlfCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    supergirlfCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (challenge)
-  const challengeCard = document.querySelector('.poster-card[data-poster="challenge"]');
-  if (challengeCard) {
-    const overlay = challengeCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      challengeCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    challengeCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    challengeCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (otto)
-  const ottoCard = document.querySelector('.poster-card[data-poster="otto"]');
-  if (ottoCard) {
-    const overlay = ottoCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      ottoCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    ottoCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    ottoCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (pole)
-  const poleCard = document.querySelector('.poster-card[data-poster="pole"]');
-  if (poleCard) {
-    const overlay = poleCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      poleCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    poleCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    poleCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (politician)
-  const politicianCard = document.querySelector('.poster-card[data-poster="politician"]');
-  if (politicianCard) {
-    const overlay = politicianCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      politicianCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    politicianCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    politicianCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (hostile)
-  const hostileCard = document.querySelector('.poster-card[data-poster="hostile"]');
-  if (hostileCard) {
-    const overlay = hostileCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      hostileCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    hostileCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    hostileCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (dune)
-  const duneCard = document.querySelector('.poster-card[data-poster="dune"]');
-  if (duneCard) {
-    const overlay = duneCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      duneCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    duneCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    duneCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (donlookup)
-  const donlookupCard = document.querySelector('.poster-card[data-poster="donlookup"]');
-  if (donlookupCard) {
-    const overlay = donlookupCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      donlookupCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    donlookupCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    donlookupCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (elcamino)
-  const elcaminoCard = document.querySelector('.poster-card[data-poster="elcamino"]');
-  if (elcaminoCard) {
-    const overlay = elcaminoCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      elcaminoCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    elcaminoCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    elcaminoCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (coda)
-  const codaCard = document.querySelector('.poster-card[data-poster="coda"]');
-  if (codaCard) {
-    const overlay = codaCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      codaCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        // start animation
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    codaCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    codaCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (spiderwomen)
-  const spiderwomenCard = document.querySelector('.poster-card[data-poster="spiderwomen"]');
-  if (spiderwomenCard) {
-    const overlay = spiderwomenCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      spiderwomenCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    spiderwomenCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    spiderwomenCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (disneymarvel)
-  const disneymarvelCard = document.querySelector('.poster-card[data-poster="disneymarvel"]');
-  if (disneymarvelCard) {
-    const overlay = disneymarvelCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      disneymarvelCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    disneymarvelCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    disneymarvelCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // Poster overlay interaction (dreamhorse)
-  const dreamhorseCard = document.querySelector('.poster-card[data-poster="dreamhorse"]');
-  if (dreamhorseCard) {
-    const overlay = dreamhorseCard.querySelector('.poster-overlay');
-
-    const toggleOverlay = (show) => {
-      dreamhorseCard.classList.toggle('active', show);
-      overlay.setAttribute('aria-hidden', show ? 'false' : 'true');
-      if (show) {
-        overlay.style.animation = 'posterFade 0.36s ease forwards';
-      } else {
-        overlay.style.animation = 'posterFade 0.36s ease reverse';
-      }
-    };
-
-    dreamhorseCard.addEventListener('mouseenter', () => {
-      toggleOverlay(true);
-    });
-
-    dreamhorseCard.addEventListener('mouseleave', () => {
-      toggleOverlay(false);
-    });
-  }
-
-  // ═══════════════════════════════════════════════════════════════
-  // MOBILE/TOUCH SUPPORT - Completely separate from desktop handlers
-  // ═══════════════════════════════════════════════════════════════
-  const IS_TOUCH_DEVICE = () => {
-    return (
-      ('ontouchstart' in window) ||
-      (navigator.maxTouchPoints > 0) ||
-      (navigator.msMaxTouchPoints > 0)
-    );
-  };
-
-  const MobileInteractions = {
-    init() {
-      // Only run on touch devices
-      if (!IS_TOUCH_DEVICE()) return;
-
-      // Get all poster cards
-      const posterCards = document.querySelectorAll('.poster-card');
-      
-      posterCards.forEach(card => {
-        // Track which posters are open on mobile (only one at a time)
-        let isOpen = false;
-
-        card.addEventListener('click', (e) => {
-          // Prevent triggering play buttons when opening/closing overlay
-          if (e.target.closest('.reel-play-btn')) {
-            return; // Let the play button handler deal with it
-          }
-
-          e.preventDefault();
-          isOpen = !isOpen;
-
-          const overlay = card.querySelector('.poster-overlay');
-          
-          if (isOpen) {
-            // Open overlay
-            card.classList.add('active');
-            overlay.setAttribute('aria-hidden', 'false');
-            overlay.style.animation = 'posterFade 0.36s ease forwards';
-          } else {
-            // Close overlay
-            card.classList.remove('active');
-            overlay.setAttribute('aria-hidden', 'true');
-            overlay.style.animation = 'posterFade 0.36s ease reverse';
-          }
-        });
-
-        // Close overlay when clicking outside any poster (if needed)
-        // Optional: uncommenting this would close an open poster when clicking elsewhere
-        // document.addEventListener('click', (e) => {
-        //   if (!card.contains(e.target) && isOpen) {
-        //     isOpen = false;
-        //     card.classList.remove('active');
-        //     overlay.setAttribute('aria-hidden', 'true');
-        //     // ... animation logic
-        //   }
-        // });
-      });
-    }
-  };
-
-  // Initialize mobile interactions when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      MobileInteractions.init();
-    });
-  } else {
-    MobileInteractions.init();
-  }
+}
+
+// ── Nav scroll ────────────────────────────────────────────────
+var nav = document.getElementById('siteNav');
+window.addEventListener('scroll', function() {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
 </script>
 
 <script>
   // Notify visitor
   (function() {
-    const page = document.title || 'Our Work';
+    var page = document.title || 'Our Work';
     fetch('/.netlify/functions/notify-visitor', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ page })
-    }).catch(err => console.log('Notification sent'));
+      body: JSON.stringify({ page: page })
+    }).catch(function(err) { console.log('Notification sent'); });
   })();
 </script>
 </body>
